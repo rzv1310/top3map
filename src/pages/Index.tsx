@@ -279,7 +279,7 @@ const Index = () => {
           {/* Accelerator */}
           <FadeIn delay={0.2} className="bg-brand text-foreground p-10 transform lg:scale-110 shadow-2xl shadow-primary/20 relative z-10 flex flex-col h-full">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background text-foreground px-4 py-1 text-sm font-bold uppercase tracking-widest border border-primary">
-              Cea mai aleasă
+              CEL MAI ALES
             </div>
             <div className="mb-8">
               <h3 className="font-display text-4xl uppercase mb-2">Accelerator</h3>
