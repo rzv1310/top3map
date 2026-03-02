@@ -19,7 +19,7 @@ const StrokeRevealText: React.FC<StrokeRevealTextProps> = ({ text, className = "
           key={i}
           className="inline-block transition-all duration-500 ease-out"
           style={{
-            WebkitTextStroke: isInView ? '2px rgba(255, 255, 255, 0.85)' : '1px rgba(255, 255, 255, 0.08)',
+            WebkitTextStroke: isInView ? '1px rgba(255, 255, 255, 0.85)' : '0.5px rgba(255, 255, 255, 0.08)',
             color: 'transparent',
             opacity: isInView ? 1 : 0.2,
             transitionDelay: `${i * 60}ms`,
