@@ -335,7 +335,7 @@ const Index = () => {
             nu lucrăm cu oricine.
           </h2>
           <p className="text-xl md:text-2xl font-bold max-w-2xl mx-auto mb-4">
-            nu optimizăm doi competitori direcți în același oraș.
+            Nu optimizăm 2 competitori direcți în același oraș.
           </p>
           <p className="text-lg text-background/60 font-medium uppercase tracking-wider">
             verificăm eligibilitatea înainte de colaborare.
