@@ -312,8 +312,8 @@ const Index = () => {
             </div>
             <ul className="space-y-4 mb-12 flex-1">
               <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-muted-foreground shrink-0" /> audit complet</li>
-              <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-muted-foreground shrink-0" /> optimizări esențiale</li>
-              <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-muted-foreground shrink-0" /> roadmap personalizat</li>
+              <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-muted-foreground shrink-0" /> optimizări esențiale google business</li>
+              <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-muted-foreground shrink-0" /> roadmap personalizat (îți spunem ce ai de făcut în continuare și faci singur)</li>
               <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-muted-foreground shrink-0" /> fără abonament lunar</li>
               <li className="flex items-start gap-3 text-destructive/50 mt-4 pt-4 border-t border-border"><XCircle className="w-5 h-5 shrink-0" /> fără garanție top 3</li>
             </ul>
