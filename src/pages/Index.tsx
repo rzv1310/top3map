@@ -134,8 +134,8 @@ const Index = () => {
             ))}
           </div>
           <FadeIn delay={0.4} className="flex flex-col items-center justify-center text-center">
-            <div className="text-4xl md:text-6xl font-display uppercase text-foreground mb-8">
-              în timp ce
+            <div className="bg-brand inline-block px-8 py-4 mb-8">
+              <span className="text-4xl md:text-6xl font-display uppercase text-foreground">în timp ce</span>
             </div>
             <p className="text-2xl md:text-4xl font-bold text-muted-foreground">
               tu finanțezi poziția lor prin <span className="text-foreground underline decoration-primary decoration-4 underline-offset-8">inacțiune.</span>
