@@ -265,24 +265,24 @@ const Index = () => {
           </FadeIn>
 
           {/* Accelerator */}
-          <FadeIn delay={0.2} className="bg-brand p-10 transform lg:scale-110 shadow-2xl shadow-primary/20 relative z-10 flex flex-col h-full">
+          <FadeIn delay={0.2} className="bg-brand text-foreground p-10 transform lg:scale-110 shadow-2xl shadow-primary/20 relative z-10 flex flex-col h-full">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background text-foreground px-4 py-1 text-sm font-bold uppercase tracking-widest border border-primary">
               Cea mai aleasă
             </div>
             <div className="mb-8">
-              <h3 className="font-display text-4xl uppercase mb-2 text-background">Accelerator</h3>
-              <p className="text-sm font-bold opacity-80 h-10 text-background">(pentru majoritatea afacerilor)</p>
+              <h3 className="font-display text-4xl uppercase mb-2">Accelerator</h3>
+              <p className="text-sm font-bold opacity-80 h-10">(pentru majoritatea afacerilor)</p>
             </div>
-            <div className="mb-8 text-background">
+            <div className="mb-8">
               <span className="text-6xl font-display">1900€</span>
               <div className="text-sm font-bold mt-1">+ 250€/lună mentenanță</div>
             </div>
-            <ul className="space-y-4 mb-12 flex-1 font-medium text-background">
+            <ul className="space-y-4 mb-12 flex-1 font-medium">
               <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 shrink-0" /> audit complet</li>
               <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 shrink-0" /> optimizare site + google business</li>
               <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 shrink-0" /> strategie autoritate locală</li>
               <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 shrink-0" /> monitorizare poziții</li>
-              <li className="flex items-start gap-3 mt-4 pt-4 border-t border-background/20 font-bold text-lg"><Target className="w-6 h-6 shrink-0" /> GARANȚIE TOP 3 INCLUSĂ</li>
+              <li className="flex items-start gap-3 mt-4 pt-4 border-t border-foreground/20 font-bold text-lg"><Target className="w-6 h-6 shrink-0" /> GARANȚIE TOP 3 INCLUSĂ</li>
             </ul>
             <button className="w-full py-5 bg-background text-foreground hover:bg-background/90 font-bold uppercase tracking-wider transition-colors text-lg">
               Vreau Top 3
