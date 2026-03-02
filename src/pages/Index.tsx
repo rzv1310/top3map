@@ -339,7 +339,7 @@ const Index = () => {
             Nu optimizăm 2 competitori direcți în același oraș.
           </p>
           <p className="text-lg text-background/60 font-medium uppercase tracking-wider">
-            verificăm eligibilitatea serviciului și orașului tău înainte de colaborare.
+            verificăm eligibilitatea serviciului în orașul tău înainte de colaborare.
           </p>
         </div>
       </Section>
