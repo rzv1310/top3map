@@ -118,7 +118,6 @@ const Index = () => {
           <div className="space-y-6">
             {[
               { icon: Phone, text: "ei primesc apelurile" },
-              { icon: Navigation, text: "ei primesc direcțiile" },
               { icon: Calendar, text: "ei primesc programările" },
               { icon: Trophy, text: "ei încasează" }
             ].map((item, i) => (
@@ -186,13 +185,13 @@ const Index = () => {
             </h2>
           </FadeIn>
           <div className="grid sm:grid-cols-3 gap-6 mb-16">
-            <FadeIn delay={0.1} className="p-6 border-2 border-background/20 font-bold text-xl uppercase line-through opacity-50 text-background">
+            <FadeIn delay={0.1} className="p-6 border-2 border-background/20 font-bold text-xl uppercase line-through opacity-50 text-muted-foreground">
               nu branding.
             </FadeIn>
-            <FadeIn delay={0.2} className="p-6 border-2 border-background/20 font-bold text-xl uppercase line-through opacity-50 text-background">
+            <FadeIn delay={0.2} className="p-6 border-2 border-background/20 font-bold text-xl uppercase line-through opacity-50 text-muted-foreground">
               nu "vizibilitate".
             </FadeIn>
-            <FadeIn delay={0.3} className="p-6 border-2 border-background/20 font-bold text-xl uppercase line-through opacity-50 text-background">
+            <FadeIn delay={0.3} className="p-6 border-2 border-background/20 font-bold text-xl uppercase line-through opacity-50 text-muted-foreground">
               nu trafic general.
             </FadeIn>
           </div>
@@ -238,23 +237,25 @@ const Index = () => {
           </h2>
         </FadeIn>
         <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-center">
-          {/* Starter */}
+          {/* Elite */}
           <FadeIn delay={0.1} className="bg-card border border-border p-8 flex flex-col h-full">
             <div className="mb-8">
-              <h3 className="font-display text-3xl uppercase text-muted-foreground mb-2">Starter</h3>
-              <p className="text-sm text-muted-foreground font-medium h-10">(pentru un început strategic)</p>
+              <h3 className="font-display text-3xl uppercase text-brand mb-2">Elite</h3>
+              <p className="text-sm text-muted-foreground font-medium h-10">(pentru control absolut în oraș)</p>
             </div>
             <div className="mb-8">
-              <span className="text-5xl font-display">800€</span>
+              <span className="text-5xl font-display">3500€</span>
+              <div className="text-sm text-muted-foreground mt-1">+ 350€/lună mentenanță</div>
             </div>
             <ul className="space-y-4 mb-12 flex-1">
-              <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-muted-foreground shrink-0" /> audit complet</li>
-              <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-muted-foreground shrink-0" /> optimizări esențiale</li>
-              <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-muted-foreground shrink-0" /> roadmap personalizat</li>
-              <li className="flex items-start gap-3 text-destructive/50 mt-4 pt-4 border-t border-border"><XCircle className="w-5 h-5 shrink-0" /> fără garanție top 3</li>
+              <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> strategie completă map pack</li>
+              <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> optimizare tehnică avansată</li>
+              <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> exclusivitate pe oraș</li>
+              <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> consultanță directă</li>
+              <li className="flex items-start gap-3 mt-4 pt-4 border-t border-border font-bold"><Target className="w-5 h-5 text-brand shrink-0" /> GARANȚIE TOP 3 INCLUSĂ</li>
             </ul>
             <button className="w-full py-4 border border-border hover:bg-foreground/5 font-bold uppercase tracking-wider transition-colors">
-              Alege Starter
+              Aplică pentru Elite
             </button>
           </FadeIn>
 
@@ -283,25 +284,23 @@ const Index = () => {
             </button>
           </FadeIn>
 
-          {/* Elite */}
+          {/* Starter */}
           <FadeIn delay={0.3} className="bg-card border border-border p-8 flex flex-col h-full">
             <div className="mb-8">
-              <h3 className="font-display text-3xl uppercase text-brand mb-2">Elite</h3>
-              <p className="text-sm text-muted-foreground font-medium h-10">(pentru control absolut în oraș)</p>
+              <h3 className="font-display text-3xl uppercase text-muted-foreground mb-2">Starter</h3>
+              <p className="text-sm text-muted-foreground font-medium h-10">(pentru un început strategic)</p>
             </div>
             <div className="mb-8">
-              <span className="text-5xl font-display">3500€</span>
-              <div className="text-sm text-muted-foreground mt-1">+ 350€/lună mentenanță</div>
+              <span className="text-5xl font-display">800€</span>
             </div>
             <ul className="space-y-4 mb-12 flex-1">
-              <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> strategie completă map pack</li>
-              <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> optimizare tehnică avansată</li>
-              <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> exclusivitate pe oraș</li>
-              <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> consultanță directă</li>
-              <li className="flex items-start gap-3 mt-4 pt-4 border-t border-border font-bold"><Target className="w-5 h-5 text-brand shrink-0" /> GARANȚIE TOP 3 INCLUSĂ</li>
+              <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-muted-foreground shrink-0" /> audit complet</li>
+              <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-muted-foreground shrink-0" /> optimizări esențiale</li>
+              <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-muted-foreground shrink-0" /> roadmap personalizat</li>
+              <li className="flex items-start gap-3 text-destructive/50 mt-4 pt-4 border-t border-border"><XCircle className="w-5 h-5 shrink-0" /> fără garanție top 3</li>
             </ul>
             <button className="w-full py-4 border border-border hover:bg-foreground/5 font-bold uppercase tracking-wider transition-colors">
-              Aplică pentru Elite
+              Alege Starter
             </button>
           </FadeIn>
         </div>
