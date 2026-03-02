@@ -86,7 +86,7 @@ const MapsScrollSection: React.FC = () => {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          în fiecare oraș, în fiecare nișă — doar <span className="text-brand font-bold">3 rezultate</span> contează.
+          în fiecare oraș, în fiecare nișă - doar <span className="text-brand font-bold">3 rezultate</span> contează.
         </motion.p>
       </section>
       <section
