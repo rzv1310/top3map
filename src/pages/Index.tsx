@@ -344,7 +344,36 @@ const Index = () => {
         </div>
       </Section>
 
-      {/* 8. CTA FINAL */}
+      {/* 8. FAQ */}
+      <Section className="bg-secondary border-t border-border">
+        <FadeIn>
+          <h2 className="font-display text-5xl md:text-7xl uppercase text-center mb-16">
+            întrebări <span className="text-brand">frecvente</span>
+          </h2>
+        </FadeIn>
+        <div className="max-w-3xl mx-auto space-y-6">
+          {[
+            { q: "în cât timp ajung în top 3?", a: "depinde de competiție, de obicei în 60 de zile, dar lucrăm până la rezultat conform garanției." },
+            { q: "ce se întâmplă dacă piața este foarte competitivă?", a: "facem analiză înainte de acceptarea colaborării." },
+            { q: "trebuie să schimb site-ul?", a: "nu neapărat. Dacă structura existentă permite, optimizăm." },
+            { q: "pot pierde poziția după ce ajung acolo?", a: "de aceea există mentenanța și protecția poziției." },
+          ].map((faq, i) => (
+            <FadeIn key={i} delay={i * 0.1}>
+              <details className="group bg-card border border-border p-6 cursor-pointer">
+                <summary className="font-display text-xl md:text-2xl uppercase list-none flex items-center justify-between gap-4">
+                  {faq.q}
+                  <span className="text-brand text-3xl font-bold transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p className="mt-4 text-lg text-muted-foreground font-medium leading-relaxed">
+                  {faq.a}
+                </p>
+              </details>
+            </FadeIn>
+          ))}
+        </div>
+      </Section>
+
+      {/* 9. CTA FINAL */}
       <Section className="bg-background min-h-[70vh] flex flex-col justify-center items-center text-center">
         <FadeIn>
            <h2 className="font-display text-6xl md:text-[8rem] uppercase mb-12" style={{ lineHeight: 1.3 }}>
