@@ -239,8 +239,8 @@ const Index = () => {
             <h3 className="text-2xl font-bold text-brand mb-8 uppercase tracking-widest">Fără următoarele, ești invizibil:</h3>
             <ul className="space-y-6">
               {[
-              "structură locală corectă pe site",
-              "optimizare tehnică map pack",
+              "date structurate locale corecte în site",
+              "optimizare complexă profil google business",
               "strategie de autoritate geografică",
               "semnale comportamentale reale",
               "sistem predictibil de recenzii"].
