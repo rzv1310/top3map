@@ -125,7 +125,7 @@ const Index = () => {
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 0.1}>
                 <div className="flex items-center gap-6 p-6 bg-foreground/5 border border-border hover:bg-foreground/10 transition-colors">
-                  <div className="bg-primary/20 p-4 rounded-full text-brand">
+                  <div className="text-brand">
                     <item.icon className="w-8 h-8" />
                   </div>
                   <span className="font-display text-3xl md:text-4xl uppercase tracking-wide">{item.text}</span>
