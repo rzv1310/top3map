@@ -191,7 +191,7 @@ const Index = () => {
       </Section>
 
       {/* 4. NOI FACEM UN SINGUR LUCRU */}
-      <Section className="bg-brand">
+      <Section className="bg-foreground">
         <div className="text-center max-w-5xl mx-auto">
           <FadeIn>
             <h2 className="font-display text-6xl md:text-8xl uppercase mb-12 text-background">
@@ -199,18 +199,18 @@ const Index = () => {
             </h2>
           </FadeIn>
           <div className="grid sm:grid-cols-3 gap-6 mb-16">
-            <FadeIn delay={0.1} className="p-6 border-2 border-background/20 font-bold text-xl uppercase line-through opacity-50 text-muted-foreground">
+            <FadeIn delay={0.1} className="p-6 border-2 border-background/20 font-bold text-xl uppercase line-through opacity-50 text-background/50">
               nu branding.
             </FadeIn>
-            <FadeIn delay={0.2} className="p-6 border-2 border-background/20 font-bold text-xl uppercase line-through opacity-50 text-muted-foreground">
+            <FadeIn delay={0.2} className="p-6 border-2 border-background/20 font-bold text-xl uppercase line-through opacity-50 text-background/50">
               nu "vizibilitate".
             </FadeIn>
-            <FadeIn delay={0.3} className="p-6 border-2 border-background/20 font-bold text-xl uppercase line-through opacity-50 text-muted-foreground">
+            <FadeIn delay={0.3} className="p-6 border-2 border-background/20 font-bold text-xl uppercase line-through opacity-50 text-background/50">
               nu trafic general.
             </FadeIn>
           </div>
           <FadeIn delay={0.5}>
-            <div className="font-display text-7xl md:text-[8rem] leading-none uppercase mb-8 text-background">
+            <div className="font-display text-7xl md:text-[8rem] leading-none uppercase mb-8 text-brand">
               TOP 3.
             </div>
             <p className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-background">
