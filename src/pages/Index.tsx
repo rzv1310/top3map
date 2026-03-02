@@ -260,7 +260,7 @@ const Index = () => {
             </div>
             <div className="mb-8">
               <span className="text-5xl font-display">3500€</span>
-              <div className="text-sm text-muted-foreground mt-1">+ 350€/lună mentenanță</div>
+              <div className="text-sm text-muted-foreground mt-1">+ 300€/lună mentenanță & protecție poziție</div>
             </div>
             <ul className="space-y-4 mb-12 flex-1">
               <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> creare website de la zero</li>
@@ -287,7 +287,7 @@ const Index = () => {
             </div>
             <div className="mb-8">
               <span className="text-6xl font-display">1900€</span>
-              <div className="text-sm font-bold mt-1">+ 250€/lună mentenanță</div>
+              <div className="text-sm font-bold mt-1">+ 300€/lună mentenanță & protecție poziție</div>
             </div>
             <ul className="space-y-4 mb-12 flex-1 font-medium">
               <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 shrink-0" /> audit complet</li>
