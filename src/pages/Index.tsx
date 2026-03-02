@@ -353,7 +353,7 @@ const Index = () => {
         </FadeIn>
         <div className="max-w-3xl mx-auto space-y-6">
           {[
-            { q: "în cât timp ajung în top 3?", a: "depinde de competiție, de obicei în 60 de zile, dar lucrăm până la rezultat conform garanției." },
+            { q: "în cât timp ajung în top 3?", a: "depinde de competiție, de obicei în 60 de zile, dar dacă depășim 90 de zile — lucrăm gratis până la rezultat, conform garanției." },
             { q: "ce se întâmplă dacă piața este foarte competitivă?", a: "facem analiză înainte de acceptarea colaborării." },
             { q: "trebuie să schimb site-ul?", a: "nu neapărat. Dacă structura existentă permite, optimizăm." },
             { q: "pot pierde poziția după ce ajung acolo?", a: "de aceea există mentenanța și protecția poziției." },
