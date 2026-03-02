@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Navigation, Calendar, CheckCircle2, XCircle, AlertTriangle, ShieldCheck, Trophy, Target, ArrowRight } from 'lucide-react';
+import MapsScrollSection from '@/components/MapsScrollSection';
 
 const FadeIn: React.FC<{ children: React.ReactNode; delay?: number; className?: string }> = ({ children, delay = 0, className = "" }) => (
   <motion.div
@@ -141,6 +142,9 @@ const Index = () => {
           </FadeIn>
         </div>
       </Section>
+
+      {/* MAPS SCROLL SECTION */}
+      <MapsScrollSection />
 
       {/* 3. PROBLEMA TA NU ESTE SITE-UL */}
       <Section>
