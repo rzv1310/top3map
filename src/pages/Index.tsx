@@ -336,10 +336,10 @@ const Index = () => {
       {/* 8. CTA FINAL */}
       <Section className="bg-background min-h-[70vh] flex flex-col justify-center items-center text-center">
         <FadeIn>
-          <h2 className="font-display text-6xl md:text-[8rem] leading-[1.1] uppercase mb-12">
-            există doar <span className="text-brand">3 locuri.</span><br/>
-            <StrokeRevealText text="unul poate fi al tău." />
-          </h2>
+           <h2 className="font-display text-6xl md:text-[8rem] uppercase mb-12" style={{ lineHeight: 1.3 }}>
+             există doar <span className="text-brand">3 locuri.</span><br/>
+             <StrokeRevealText text="unul poate fi al tău." />
+           </h2>
           <div className="flex justify-center">
             <CtaButton className="text-xl md:text-2xl py-6 px-10">
               verifică dacă orașul tău este disponibil
