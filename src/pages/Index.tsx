@@ -183,7 +183,7 @@ const Index = () => {
             </ul>
             <FadeIn delay={0.6} className="mt-12 pt-8 border-t border-border text-center">
               <p className="font-display text-4xl uppercase">
-                fără ele, <span className="text-brand">nu vei intra în top 3.</span>
+                fără ele, <span className="text-stroke-brand">nu vei intra în top 3.</span>
               </p>
             </FadeIn>
           </div>
