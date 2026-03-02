@@ -24,11 +24,10 @@ const MapsScrollSection: React.FC = () => {
 
     const cards = cardRefs.current.filter(Boolean) as HTMLDivElement[];
     const totalCards = cards.length;
-    const scrollPerCard = 600;
+    const scrollPerCard = 700;
     const totalScroll = totalCards * scrollPerCard;
 
     const ctx = gsap.context(() => {
-      // Create one big timeline scrubbed by scroll
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: section,
@@ -41,18 +40,18 @@ const MapsScrollSection: React.FC = () => {
         },
       });
 
-      // Each card (except last) slides up and fades out
       cards.forEach((card, i) => {
         if (i === totalCards - 1) return;
 
-        // Dead zone: hold for a bit, then animate out
-        tl.to(card, { duration: 0.3 }, i * 1); // dead zone placeholder
+        // Dead zone hold, then dramatic exit
+        tl.to(card, { duration: 0.3 }, i * 1);
         tl.to(card, {
-          yPercent: -120,
+          yPercent: -150,
+          rotation: (i % 2 === 0 ? -1 : 1) * 15,
           opacity: 0,
-          scale: 0.95,
+          scale: 0.7,
           duration: 0.7,
-          ease: 'power2.inOut',
+          ease: 'power3.inOut',
         }, i * 1 + 0.3);
       });
     }, section);
@@ -60,24 +59,36 @@ const MapsScrollSection: React.FC = () => {
     return () => ctx.revert();
   }, []);
 
+  // Fan offsets: each card peeks out below + rotated like held cards
+  const getCardStyle = (i: number) => {
+    const rotation = (i - 3) * 3; // spread from -9 to +9 degrees
+    const offsetY = i * 12; // each card 12px lower
+    const offsetX = (i - 3) * 8; // slight horizontal spread
+    return {
+      zIndex: images.length - i,
+      transform: `translateY(${offsetY}px) translateX(${offsetX}px) rotate(${rotation}deg)`,
+      transformOrigin: 'bottom center',
+    };
+  };
+
   return (
     <section
       ref={sectionRef}
       className="relative h-screen w-full bg-background overflow-hidden"
     >
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <h2 className="font-display text-3xl md:text-5xl uppercase text-muted-foreground mb-8 text-center px-6 relative z-0">
+        <h2 className="font-display text-3xl md:text-5xl uppercase text-muted-foreground mb-12 text-center px-6 relative z-0">
           asta văd clienții tăi <span className="text-brand">acum.</span>
         </h2>
-        <div className="relative w-[300px] sm:w-[340px] md:w-[380px] aspect-[9/19]">
+        <div className="relative w-[240px] sm:w-[280px] md:w-[320px] aspect-[9/19]">
           {images.map((src, i) => (
             <div
               key={i}
               ref={(el) => { cardRefs.current[i] = el; }}
-              className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl shadow-primary/10 border border-border will-change-transform"
+              className="absolute inset-0 rounded-2xl overflow-hidden border border-border will-change-transform"
               style={{
-                zIndex: images.length - i,
-                transform: `rotate(${(i % 2 === 0 ? -1 : 1) * (0.5 + i * 0.3)}deg)`,
+                ...getCardStyle(i),
+                boxShadow: `0 ${4 + i * 2}px ${20 + i * 5}px rgba(255, 30, 0, ${0.05 + i * 0.02})`,
               }}
             >
               <img
