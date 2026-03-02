@@ -72,36 +72,44 @@ const MapsScrollSection: React.FC = () => {
   };
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative h-screen w-full bg-background overflow-hidden"
-    >
-      <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <h2 className="font-display text-3xl md:text-5xl uppercase text-muted-foreground mb-12 text-center px-6 relative z-0">
+    <>
+      {/* Spacer so cards are fully visible before pin starts */}
+      <section className="bg-background py-20 md:py-28 text-center px-6">
+        <h2 className="font-display text-4xl md:text-6xl uppercase text-foreground mb-4">
           asta văd clienții tăi <span className="text-brand">acum.</span>
         </h2>
-        <div className="relative w-[240px] sm:w-[280px] md:w-[320px] aspect-[9/19]">
-          {images.map((src, i) => (
-            <div
-              key={i}
-              ref={(el) => { cardRefs.current[i] = el; }}
-              className="absolute inset-0 rounded-2xl overflow-hidden border border-border will-change-transform"
-              style={{
-                ...getCardStyle(i),
-                boxShadow: `0 ${4 + i * 2}px ${20 + i * 5}px rgba(255, 30, 0, ${0.05 + i * 0.02})`,
-              }}
-            >
-              <img
-                src={src}
-                alt={`Google Maps rezultat ${i + 1}`}
-                className="w-full h-full object-cover object-top"
-                loading="lazy"
-              />
-            </div>
-          ))}
+        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+          în fiecare oraș, în fiecare nișă — doar <span className="text-brand font-bold">3 rezultate</span> contează.
+        </p>
+      </section>
+      <section
+        ref={sectionRef}
+        className="relative h-screen w-full bg-background overflow-hidden"
+      >
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="relative w-[240px] sm:w-[280px] md:w-[320px] aspect-[9/19]">
+            {images.map((src, i) => (
+              <div
+                key={i}
+                ref={(el) => { cardRefs.current[i] = el; }}
+                className="absolute inset-0 rounded-2xl overflow-hidden border border-border will-change-transform"
+                style={{
+                  ...getCardStyle(i),
+                  boxShadow: `0 ${4 + i * 2}px ${20 + i * 5}px rgba(255, 30, 0, ${0.05 + i * 0.02})`,
+                }}
+              >
+                <img
+                  src={src}
+                  alt={`Google Maps rezultat ${i + 1}`}
+                  className="w-full h-full object-cover object-top"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
