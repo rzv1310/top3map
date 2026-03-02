@@ -360,7 +360,7 @@ const Index = () => {
           ].map((faq, i) => (
             <FadeIn key={i} delay={i * 0.1}>
               <details className="group bg-card border border-border p-6 cursor-pointer">
-                <summary className="font-display text-xl md:text-2xl uppercase list-none flex items-center justify-between gap-4">
+                <summary className="text-xl md:text-2xl font-medium list-none flex items-center justify-between gap-4">
                   {faq.q}
                   <span className="text-brand text-3xl font-bold transition-transform group-open:rotate-45">+</span>
                 </summary>
