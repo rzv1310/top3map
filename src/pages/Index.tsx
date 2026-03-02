@@ -230,7 +230,7 @@ const Index = () => {
               <span className="font-display text-4xl md:text-5xl uppercase text-brand">garanție</span>
             </div>
             <h2 className="font-display text-5xl md:text-7xl uppercase mb-8">
-              dacă nu ajungi în top 3,<br/>
+              dacă nu ajungi în top 3 în 90 de zile,<br/>
               <span className="text-muted-foreground">continuăm optimizarea</span><br/>
               <span className="text-brand">fără costuri suplimentare</span><br/>
               <span className="text-muted-foreground">până ajungi.</span>
