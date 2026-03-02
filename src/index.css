@@ -62,6 +62,7 @@
 @layer utilities {
   .font-display {
     font-family: "Anton", ui-sans-serif, system-ui, sans-serif;
+    line-height: 1.1;
   }
 
   .text-stroke {
