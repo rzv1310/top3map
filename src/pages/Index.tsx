@@ -348,7 +348,7 @@ const Index = () => {
       <Section className="bg-secondary border-t border-border">
         <FadeIn>
           <h2 className="font-display text-5xl md:text-7xl uppercase text-center mb-16">
-            întrebări <span className="text-brand">frecvente</span>
+            Întrebări <span className="text-brand">frecvente</span> ale clienților sceptici
           </h2>
         </FadeIn>
         <div className="max-w-3xl mx-auto space-y-6">
