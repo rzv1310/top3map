@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -78,9 +79,15 @@ const MapsScrollSection: React.FC = () => {
         <h2 className="font-display text-4xl md:text-6xl uppercase text-foreground mb-4">
           asta văd clienții tăi <span className="text-brand">acum.</span>
         </h2>
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+        <motion.p
+          className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto"
+          initial={{ scale: 1 }}
+          whileInView={{ scale: 1.5 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           în fiecare oraș, în fiecare nișă — doar <span className="text-brand font-bold">3 rezultate</span> contează.
-        </p>
+        </motion.p>
       </section>
       <section
         ref={sectionRef}
