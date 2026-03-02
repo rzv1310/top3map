@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Navigation, Calendar, CheckCircle2, XCircle, AlertTriangle, ShieldCheck, Trophy, Target, ArrowRight } from 'lucide-react';
+import { MapPin, Phone, Navigation, Calendar, CheckCircle2, XCircle, AlertTriangle, ShieldCheck, Trophy, Target, ArrowRight, DollarSign } from 'lucide-react';
 import MapsScrollSection from '@/components/MapsScrollSection';
 import StrokeRevealText from '@/components/StrokeRevealText';
 
@@ -121,7 +121,7 @@ const Index = () => {
             {[
               { icon: Phone, text: "ei primesc apelurile" },
               { icon: Calendar, text: "ei primesc programările" },
-              { icon: Trophy, text: "ei încasează" }
+              { icon: DollarSign, text: "ei încasează" }
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 0.1}>
                 <div className="flex items-center gap-6 p-6 bg-foreground/5 border border-border hover:bg-foreground/10 transition-colors">
