@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Navigation, Calendar, CheckCircle2, XCircle, AlertTriangle, ShieldCheck, Trophy, Target, ArrowRight, DollarSign } from 'lucide-react';
+import { MapPin, Phone, Navigation, Calendar, CheckCircle2, XCircle, AlertTriangle, ShieldCheck, Trophy, Target, ArrowRight, DollarSign, Send } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { toast } from 'sonner';
 import MapsScrollSection from '@/components/MapsScrollSection';
 import StrokeRevealText from '@/components/StrokeRevealText';
 
@@ -22,6 +25,73 @@ const Section: React.FC<{children: React.ReactNode;className?: string;id?: strin
       {children}
     </div>
   </section>;
+
+const ContactForm: React.FC = () => {
+  const [form, setForm] = useState({ nume: '', telefon: '', oras: '', website: '' });
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!form.nume.trim() || !form.telefon.trim() || !form.oras.trim()) {
+      toast.error('Completează câmpurile obligatorii.');
+      return;
+    }
+    setLoading(true);
+    setTimeout(() => {
+      toast.success('Mulțumim! Te contactăm în curând.');
+      setForm({ nume: '', telefon: '', oras: '', website: '' });
+      setLoading(false);
+    }, 800);
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-4">
+      <FadeIn delay={0.1}>
+        <Input
+          placeholder="Nume *"
+          value={form.nume}
+          onChange={e => setForm(f => ({ ...f, nume: e.target.value }))}
+          className="bg-card border-border text-foreground placeholder:text-muted-foreground h-14 text-lg"
+        />
+      </FadeIn>
+      <FadeIn delay={0.15}>
+        <Input
+          placeholder="Telefon *"
+          type="tel"
+          value={form.telefon}
+          onChange={e => setForm(f => ({ ...f, telefon: e.target.value }))}
+          className="bg-card border-border text-foreground placeholder:text-muted-foreground h-14 text-lg"
+        />
+      </FadeIn>
+      <FadeIn delay={0.2}>
+        <Input
+          placeholder="Oraș *"
+          value={form.oras}
+          onChange={e => setForm(f => ({ ...f, oras: e.target.value }))}
+          className="bg-card border-border text-foreground placeholder:text-muted-foreground h-14 text-lg"
+        />
+      </FadeIn>
+      <FadeIn delay={0.25}>
+        <Input
+          placeholder="Website (opțional)"
+          value={form.website}
+          onChange={e => setForm(f => ({ ...f, website: e.target.value }))}
+          className="bg-card border-border text-foreground placeholder:text-muted-foreground h-14 text-lg"
+        />
+      </FadeIn>
+      <FadeIn delay={0.3}>
+        <Button
+          type="submit"
+          disabled={loading}
+          className="w-full h-14 text-lg font-bold uppercase bg-brand hover:bg-brand-hover text-primary-foreground tracking-wider"
+        >
+          {loading ? 'Se trimite...' : 'Trimite'}
+          {!loading && <Send className="ml-2 w-5 h-5" />}
+        </Button>
+      </FadeIn>
+    </form>
+  );
+};
 
 
 const CtaButton: React.FC<{children: React.ReactNode;className?: string;}> = ({ children, className = "" }) =>
@@ -342,6 +412,19 @@ const Index = () => {
             verificăm eligibilitatea serviciului în orașul tău înainte de colaborare.
           </p>
         </div>
+      </Section>
+
+      {/* Contact Form */}
+      <Section className="bg-background border-t border-border" id="contact">
+        <FadeIn>
+          <h2 className="font-display text-5xl md:text-7xl uppercase text-center mb-4">
+            Solicită <span className="text-brand">analiza</span> gratuită
+          </h2>
+          <p className="text-center text-muted-foreground mb-12 text-lg">
+            Completează formularul și te contactăm în 24 de ore.
+          </p>
+        </FadeIn>
+        <ContactForm />
       </Section>
 
       {/* 8. FAQ */}
