@@ -15,81 +15,81 @@ gsap.registerPlugin(ScrollTrigger);
 const images = [maps1, maps2, maps3, maps4, maps5, maps6, maps7];
 
 const MapsScrollSection: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<HTMLDivElement[]>([]);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const stackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const cards = cardsRef.current;
-      if (!cards.length) return;
+      const cards = stackRef.current?.children;
+      if (!cards) return;
 
-      // Each card pins and then slides up to reveal next
-      cards.forEach((card, i) => {
-        if (i === cards.length - 1) return; // last card doesn't need animation
+      const cardArray = Array.from(cards) as HTMLElement[];
+      const totalCards = cardArray.length;
 
-        ScrollTrigger.create({
-          trigger: card,
-          start: 'top top',
-          end: '+=400',
-          pin: true,
-          pinSpacing: true,
-          scrub: true,
-        });
-
-        gsap.to(card, {
-          yPercent: -100,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: card,
-            start: 'top top',
-            end: '+=400',
-            scrub: true,
-          },
-        });
-      });
-
-      // Pin the last card briefly
+      // Pin the entire stack container
       ScrollTrigger.create({
-        trigger: cards[cards.length - 1],
+        trigger: sectionRef.current,
         start: 'top top',
-        end: '+=300',
+        end: `+=${totalCards * 600}`,
         pin: true,
         pinSpacing: true,
       });
-    }, containerRef);
+
+      // Each card (except last) fades/slides up on scroll
+      cardArray.forEach((card, i) => {
+        if (i === totalCards - 1) return; // last card stays
+
+        gsap.to(card, {
+          yPercent: -120,
+          opacity: 0,
+          scale: 0.9,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: `${i * 600} top`,
+            end: `${i * 600 + 500} top`,
+            scrub: 0.5,
+          },
+        });
+      });
+    }, sectionRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <section ref={containerRef} className="relative bg-background">
-      <div className="text-center py-16 px-6">
-        <h2 className="font-display text-4xl md:text-6xl uppercase text-muted-foreground">
+    <section
+      ref={sectionRef}
+      className="relative h-screen w-full bg-background overflow-hidden"
+    >
+      <div className="absolute inset-0 flex flex-col items-center justify-center">
+        <h2 className="font-display text-3xl md:text-5xl uppercase text-muted-foreground mb-8 text-center px-6 relative z-0">
           asta văd clienții tăi <span className="text-brand">acum.</span>
         </h2>
-      </div>
-      {images.map((src, i) => (
-        <div
-          key={i}
-          ref={(el) => { if (el) cardsRef.current[i] = el; }}
-          className="h-screen w-full flex items-center justify-center bg-background relative z-10"
-          style={{ zIndex: images.length - i }}
-        >
-          <div
-            className="relative w-[320px] sm:w-[360px] md:w-[400px] rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 border border-border"
-            style={{
-              transform: `rotate(${(i % 2 === 0 ? -1 : 1) * (1 + i * 0.5)}deg)`,
-            }}
-          >
-            <img
-              src={src}
-              alt={`Google Maps rezultat ${i + 1}`}
-              className="w-full h-auto block"
-              loading="lazy"
-            />
-          </div>
+        <div ref={stackRef} className="relative w-[300px] sm:w-[340px] md:w-[380px] aspect-[9/19]">
+          {/* Render in reverse so first image is on top */}
+          {[...images].reverse().map((src, reverseIdx) => {
+            const i = images.length - 1 - reverseIdx;
+            return (
+              <div
+                key={i}
+                className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl shadow-primary/10 border border-border"
+                style={{
+                  zIndex: images.length - i,
+                  transform: `rotate(${(i % 2 === 0 ? -1 : 1) * (0.5 + i * 0.3)}deg)`,
+                }}
+              >
+                <img
+                  src={src}
+                  alt={`Google Maps rezultat ${i + 1}`}
+                  className="w-full h-full object-cover object-top"
+                  loading="lazy"
+                />
+              </div>
+            );
+          })}
         </div>
-      ))}
+      </div>
     </section>
   );
 };
