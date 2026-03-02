@@ -93,7 +93,7 @@ const Index = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <h1 className="font-display text-6xl sm:text-7xl md:text-[6rem] leading-[0.85] uppercase mb-8">
+            <h1 className="font-display text-6xl sm:text-7xl md:text-[6rem] leading-[1.1] uppercase mb-8">
               dacă nu ești în <span className="text-brand">top 3</span> în google maps,<br/>
               <StrokeRevealText text="nu exiști." />
             </h1>
@@ -336,7 +336,7 @@ const Index = () => {
       {/* 8. CTA FINAL */}
       <Section className="bg-background min-h-[70vh] flex flex-col justify-center items-center text-center">
         <FadeIn>
-          <h2 className="font-display text-6xl md:text-[8rem] leading-[0.85] uppercase mb-12">
+          <h2 className="font-display text-6xl md:text-[8rem] leading-[1.1] uppercase mb-12">
             există doar <span className="text-brand">3 locuri.</span><br/>
             <StrokeRevealText text="unul poate fi al tău." />
           </h2>
