@@ -36,6 +36,7 @@ const MapsScrollSection: React.FC = () => {
           end: `+=${totalScroll}`,
           pin: true,
           pinSpacing: true,
+          pinReparent: false,
           scrub: 0.3,
         },
       });
