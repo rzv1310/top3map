@@ -418,10 +418,10 @@ const Index = () => {
       <Section className="bg-background border-t border-border" id="contact">
         <FadeIn>
           <h2 className="font-display text-5xl md:text-7xl uppercase text-center mb-4">
-            Solicită <span className="text-brand">analiza</span> gratuită
+            VREAU <span className="text-brand">ANALIZA</span> GRATUITĂ
           </h2>
           <p className="text-center text-muted-foreground mb-12 text-lg">
-            Completează formularul și te contactăm în 24 de ore.
+            Completează formularul și te contactăm imediat.
           </p>
         </FadeIn>
         <ContactForm />
