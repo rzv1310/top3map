@@ -330,9 +330,11 @@ const Index = () => {
             </div>
             <div className="mb-8">
               <span className="text-5xl font-display">3500€</span>
-              <div className="text-sm text-muted-foreground mt-1">+ 350€/lună mentenanță</div>
+              <div className="text-sm text-muted-foreground mt-1">+ 300€/lună mentenanță & protecție poziție</div>
             </div>
             <ul className="space-y-4 mb-12 flex-1">
+              <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> creare website de la zero</li>
+              <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> creare profil Google Business</li>
               <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> strategie completă map pack</li>
               <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> optimizare tehnică avansată</li>
               <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> exclusivitate pe oraș</li>
@@ -347,7 +349,7 @@ const Index = () => {
           {/* Accelerator */}
           <FadeIn delay={0.2} className="bg-brand text-foreground p-10 transform lg:scale-110 shadow-2xl shadow-primary/20 relative z-10 flex flex-col h-full">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background text-foreground px-4 py-1 text-sm font-bold uppercase tracking-widest border border-primary">
-              Cea mai aleasă
+              CEL MAI ALES
             </div>
             <div className="mb-8">
               <h3 className="font-display text-4xl uppercase mb-2">Accelerator</h3>
@@ -355,7 +357,7 @@ const Index = () => {
             </div>
             <div className="mb-8">
               <span className="text-6xl font-display">1900€</span>
-              <div className="text-sm font-bold mt-1">+ 250€/lună mentenanță</div>
+              <div className="text-sm font-bold mt-1">+ 300€/lună mentenanță & protecție poziție</div>
             </div>
             <ul className="space-y-4 mb-12 flex-1 font-medium">
               <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 shrink-0" /> audit complet</li>
