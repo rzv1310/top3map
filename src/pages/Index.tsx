@@ -355,20 +355,20 @@ const Index = () => {
           {[
             { q: "în cât timp ajung în top 3?", a: "depinde de competiție, de obicei în 60 de zile, dar dacă depășim 90 de zile — lucrăm gratis până la rezultat, conform garanției." },
             { q: "cum puteți garanta top 3?", a: "garantăm atingerea poziției top 3 în piețele pe care le validăm ca eligibile.\n\nlucrăm doar în orașe și nișe unde analiza inițială arată că există spațiu real de creștere.\n\nnu acceptăm colaborări unde competiția sau istoricul profilului fac obiectivul nerealist.\n\nînainte de a începe, facem o analiză completă a:\n• competiției locale\n• autorității actuale\n• istoricului profilului\n• volumului de căutări\n• nivelului de optimizare existent.\n\ndacă analiza arată că obiectivul este realist, acceptăm colaborarea și oferim garanția." },
-            { q: "am mai lucrat cu o agenție și nu a funcționat. care este diferența?", a: "majoritatea agențiilor fac SEO la modul general. noi lucrăm exclusiv pentru harta Google și poziționare locală strategică, cu obiectiv unic: top 3." },
-            { q: "ce se întâmplă dacă google schimbă algoritmul?", a: "monitorizăm constant pozițiile și ajustăm strategia. mentenanța există tocmai pentru adaptare continuă la schimbările algoritmice sau ale concurenței." },
-            { q: "dacă ajung în top 3, primesc garantat clienți?", a: "top 3 îți oferă vizibilitate maximă. numărul exact de clienți depinde de cererea din piață și de rata ta de conversie. înainte de a începe colaborarea, îți vom spune câți oameni din orașul tău caută lunar serviciul prestat de tine." },
-            { q: "cât trebuie să mă implic?", a: "minim. vom avea o conversație telefonică de 30 min în care îți spunem ce avem nevoie de la tine — acces, poze, echipă, adresă etc. și anumite validări punctuale. restul implementării este gestionat integral de noi." },
-            { q: "există obligații pe termen lung?", a: "implementarea va avea un termen clar și scurt. mentenanța este lunară și poate fi ajustată în funcție de rezultate." },
-            { q: "ce se întâmplă dacă deja sunt pe locul 4 sau 5?", a: "cu atât mai bine. intervenția este mai rapidă și necesită mai puține ajustări strategice. în harta Google sunt vizibili doar primii 3 — aproape nimeni nu dă click pe 'vezi mai multe locații', deci probabil că nu ai multe telefoane dacă ești pe locul 4." },
-            { q: "lucrați cu concurența mea?", a: "nu optimizăm 2 competitori direcți în același oraș. exclusivitatea locală este parte din strategia și din garanția noastră." },
+            { q: "am mai lucrat cu o agenție și nu a funcționat. care este diferența?", a: "majoritatea agențiilor fac SEO la modul general.\n\nnoi lucrăm exclusiv pentru harta Google și poziționare locală strategică, cu obiectiv unic: top 3." },
+            { q: "ce se întâmplă dacă google schimbă algoritmul?", a: "monitorizăm constant pozițiile și ajustăm strategia.\n\nmentenanța există tocmai pentru adaptare continuă la schimbările algoritmice sau ale concurenței." },
+            { q: "dacă ajung în top 3, primesc garantat clienți?", a: "top 3 îți oferă vizibilitate maximă.\n\nnumărul exact de clienți depinde de cererea din piață și de rata ta de conversie.\n\nînainte de a începe colaborarea, îți vom spune câți oameni din orașul tău caută lunar serviciul prestat de tine." },
+            { q: "cât trebuie să mă implic?", a: "minim.\n\nvom avea o conversație telefonică de 30 min în care îți spunem ce avem nevoie de la tine — acces, poze, echipă, adresă etc. și anumite validări punctuale.\n\nrestul implementării este gestionat integral de noi." },
+            { q: "există obligații pe termen lung?", a: "implementarea va avea un termen clar și scurt.\n\nmentenanța este lunară și poate fi ajustată în funcție de rezultate." },
+            { q: "ce se întâmplă dacă deja sunt pe locul 4 sau 5?", a: "cu atât mai bine.\n\nintervenția este mai rapidă și necesită mai puține ajustări strategice.\n\nîn harta Google sunt vizibili doar primii 3 — aproape nimeni nu dă click pe 'vezi mai multe locații', deci probabil că nu ai multe telefoane dacă ești pe locul 4." },
+            { q: "lucrați cu concurența mea?", a: "nu optimizăm 2 competitori direcți în același oraș.\n\nexclusivitatea locală este parte din strategia și din garanția noastră." },
             { q: "pot pierde poziția dacă opresc mentenanța?", a: "da, în piețe competitive poziția poate fluctua fără protecție și fără ajustări continue." },
-            { q: "de ce nu este mai ieftin?", a: "pentru că nu vindem trafic sau promisiuni. vindem poziționare strategică într-un spațiu limitat la doar 3 locuri." },
-            { q: "de ce să plătesc atât când pot face singur?", a: "poți face și singur. întrebarea este cât te costă timpul de testare, greșelile și anii pierduți până la rezultat. poziționarea în top 3 nu ține doar de setări vizibile, ci de structură tehnică, corelări strategice și semnale comportamentale care necesită experiență și execuție precisă." },
-            { q: "aveți rezultate dovedite? studii de caz?", a: "da. înainte de colaborare prezentăm exemple relevante din piețe similare. însă mai important decât un studiu de caz este analiza orașului tău — fiecare piață este diferită, iar decizia se bazează pe datele concrete din zona ta." },
-            { q: "funcționează și pentru nișa mea?", a: "mecanismul map pack este același indiferent de industrie. diferența este nivelul de competiție și structura pieței locale. înainte de a accepta colaborarea, analizăm exact nișa și orașul tău pentru a valida eligibilitatea." },
-            { q: "recenziile negative mă pot afecta chiar și în top 3?", a: "da, recenziile influențează conversia și poziționarea. de aceea, strategia include structurarea și optimizarea reputației online. nu doar numărul de recenzii contează, ci distribuția, frecvența și răspunsurile. top 3 îți aduce vizibilitate — reputația îți aduce conversie." },
-            { q: "am deja clienți suficienți. de ce aș mai investi?", a: "dacă ai deja clienți, întrebarea este: vrei stabilitate sau vrei control? poziția în top 3 nu înseamnă doar mai mulți clienți, ci protecție împotriva concurenței și predictibilitate pe termen lung. piețele locale devin mai competitive în fiecare an." },
+            { q: "de ce nu este mai ieftin?", a: "pentru că nu vindem trafic sau promisiuni.\n\nvindem poziționare strategică într-un spațiu limitat la doar 3 locuri." },
+            { q: "de ce să plătesc atât când pot face singur?", a: "poți face și singur.\n\nîntrebarea este cât te costă timpul de testare, greșelile și anii pierduți până la rezultat.\n\npoziționarea în top 3 nu ține doar de setări vizibile, ci de structură tehnică, corelări strategice și semnale comportamentale care necesită experiență și execuție precisă." },
+            { q: "aveți rezultate dovedite? studii de caz?", a: "da.\n\nînainte de colaborare prezentăm exemple relevante din piețe similare.\n\nînsă mai important decât un studiu de caz este analiza orașului tău — fiecare piață este diferită, iar decizia se bazează pe datele concrete din zona ta." },
+            { q: "funcționează și pentru nișa mea?", a: "mecanismul map pack este același indiferent de industrie.\n\ndiferența este nivelul de competiție și structura pieței locale.\n\nînainte de a accepta colaborarea, analizăm exact nișa și orașul tău pentru a valida eligibilitatea." },
+            { q: "recenziile negative mă pot afecta chiar și în top 3?", a: "da, recenziile influențează conversia și poziționarea.\n\nde aceea, strategia include structurarea și optimizarea reputației online.\n\nnu doar numărul de recenzii contează, ci distribuția, frecvența și răspunsurile.\n\ntop 3 îți aduce vizibilitate — reputația îți aduce conversie." },
+            { q: "am deja clienți suficienți. de ce aș mai investi?", a: "dacă ai deja clienți, întrebarea este: vrei stabilitate sau vrei control?\n\npoziția în top 3 nu înseamnă doar mai mulți clienți, ci protecție împotriva concurenței și predictibilitate pe termen lung.\n\npiețele locale devin mai competitive în fiecare an." },
           ].map((faq, i) => (
             <FadeIn key={i} delay={i * 0.1}>
               <details className="group bg-card border border-border p-6 cursor-pointer">
@@ -376,9 +376,11 @@ const Index = () => {
                   {faq.q}
                   <span className="text-brand text-3xl font-bold transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="mt-4 text-lg text-muted-foreground font-medium leading-relaxed">
-                  {faq.a}
-                </p>
+                <div className="mt-4 text-lg text-muted-foreground font-medium leading-relaxed space-y-4">
+                  {faq.a.split('\n\n').map((paragraph, j) => (
+                    <p key={j}>{paragraph}</p>
+                  ))}
+                </div>
               </details>
             </FadeIn>
           ))}
