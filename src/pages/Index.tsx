@@ -128,7 +128,7 @@ const Index = () => {
                   <motion.div
                     className="text-brand"
                     initial={{ rotateY: 0 }}
-                    whileInView={{ rotateY: 360 }}
+                    whileInView={{ rotateY: 720 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 2, delay: i * 0.15, ease: "easeInOut" }}
                     style={{ perspective: 200 }}
