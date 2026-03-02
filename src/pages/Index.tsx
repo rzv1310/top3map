@@ -76,7 +76,7 @@ const HeroMapPack = () => (
       transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
       className="absolute -bottom-6 -left-10 bg-brand text-foreground font-display uppercase px-6 py-4 text-2xl rotate-3 shadow-xl"
     >
-      90% din trafic
+      Primii 3 iau 90% din trafic
     </motion.div>
   </motion.div>
 );
