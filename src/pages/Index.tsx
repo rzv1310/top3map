@@ -225,8 +225,9 @@ const Index = () => {
         <ShieldCheck className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] text-foreground/[0.02] pointer-events-none" />
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <FadeIn>
-            <div className="inline-flex items-center justify-center p-6 bg-foreground/5 border border-border rounded-full mb-8">
+            <div className="inline-flex items-center justify-center gap-4 p-6 bg-foreground/5 border border-border rounded-full mb-8">
               <ShieldCheck className="w-16 h-16 text-brand" />
+              <span className="font-display text-4xl md:text-5xl uppercase text-brand">garanție</span>
             </div>
             <h2 className="font-display text-5xl md:text-7xl uppercase mb-8">
               dacă nu ajungi în top 3,<br/>
