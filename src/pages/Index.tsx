@@ -20,7 +20,7 @@ const FadeIn: React.FC<{children: React.ReactNode;delay?: number;className?: str
 
 
 const Section: React.FC<{children: React.ReactNode;className?: string;id?: string;}> = ({ children, className = "", id = "" }) =>
-<section id={id} className={`py-24 md:py-32 px-6 ${className}`}>
+<section id={id} className={`py-16 md:py-24 lg:py-32 px-4 md:px-6 ${className}`}>
     <div className="max-w-6xl mx-auto">
       {children}
     </div>
@@ -155,7 +155,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection-brand overflow-x-hidden">
       {/* 1. HERO */}
-      <section className="relative min-h-[90vh] flex items-center px-6 pt-20 pb-12 overflow-hidden">
+      <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center px-4 md:px-6 pt-16 md:pt-20 pb-10 md:pb-12 overflow-hidden">
         <div className="absolute inset-0 grid-background pointer-events-none"></div>
         <div className="max-w-6xl mx-auto w-full relative z-10 grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -163,11 +163,11 @@ const Index = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}>
             
-            <h1 className="font-display text-6xl sm:text-7xl md:text-[6rem] leading-[1.1] uppercase mb-8">
+            <h1 className="font-display text-[2.75rem] sm:text-6xl md:text-[6rem] leading-[1.1] uppercase mb-6 md:mb-8">
               dacă nu ești în <span className="text-brand">top 3</span> în google maps,<br />
               <StrokeRevealText text="nu exiști." />
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground font-medium mb-10 max-w-xl leading-relaxed">
+            <p className="text-lg md:text-2xl text-muted-foreground font-medium mb-8 md:mb-10 max-w-xl leading-relaxed">
               atât de simplu.<br />
               când cineva caută serviciul tău în oraș, vede doar 3 rezultate.<br />
               <span className="text-foreground font-bold">restul sunt ignorate.</span>
@@ -181,12 +181,12 @@ const Index = () => {
       {/* 2. REALITATEA DURĂ */}
       <Section className="bg-secondary border-y border-border">
         <FadeIn>
-          <h2 className="font-display text-5xl md:text-7xl uppercase mb-4 text-center">
+          <h2 className="font-display text-3xl sm:text-5xl md:text-7xl uppercase mb-4 text-center">
             concurența ta nu e mai bună.<br />
             <span className="text-brand">e doar mai sus.</span>
           </h2>
         </FadeIn>
-        <div className="grid md:grid-cols-2 gap-16 mt-20 items-center">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 mt-12 md:mt-20 items-center">
           <div className="space-y-6">
             {[
             { icon: Phone, text: "ei primesc apelurile" },
@@ -205,16 +205,16 @@ const Index = () => {
                   
                     <item.icon className="w-8 h-8" />
                   </motion.div>
-                  <span className="font-display text-3xl md:text-4xl uppercase tracking-wide">{item.text}</span>
+                  <span className="font-display text-2xl md:text-4xl uppercase tracking-wide">{item.text}</span>
                 </div>
               </FadeIn>
             )}
           </div>
           <FadeIn delay={0.4} className="flex flex-col items-center justify-center text-center">
             <div className="bg-brand inline-block px-8 py-4 mb-8">
-              <span className="text-4xl md:text-6xl font-display uppercase text-foreground">în timp ce</span>
+              <span className="text-3xl md:text-6xl font-display uppercase text-foreground">în timp ce</span>
             </div>
-            <p className="text-2xl md:text-4xl font-bold text-muted-foreground">
+            <p className="text-xl md:text-4xl font-bold text-muted-foreground">
               tu finanțezi poziția lor prin <span className="text-foreground underline decoration-primary decoration-4 underline-offset-8">inacțiune.</span>
             </p>
           </FadeIn>
@@ -228,15 +228,15 @@ const Index = () => {
       <Section>
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <h2 className="font-display text-5xl md:text-7xl uppercase mb-16 text-center">
+            <h2 className="font-display text-3xl sm:text-5xl md:text-7xl uppercase mb-10 md:mb-16 text-center">
               ai deja site.
             </h2>
-            <h2 className="font-display text-5xl md:text-7xl uppercase mb-16 text-center mt-8">
+            <h2 className="font-display text-3xl sm:text-5xl md:text-7xl uppercase mb-10 md:mb-16 text-center mt-6 md:mt-8">
               dar site-ul tău <StrokeRevealText text="nu domină local." />
             </h2>
           </FadeIn>
-          <div className="mt-16 bg-card border border-border p-8 md:p-12">
-            <h3 className="text-2xl font-bold text-brand mb-8 uppercase tracking-widest">Fără următoarele, ești invizibil:</h3>
+          <div className="mt-10 md:mt-16 bg-card border border-border p-5 md:p-12">
+            <h3 className="text-xl md:text-2xl font-bold text-brand mb-6 md:mb-8 uppercase tracking-widest">Fără următoarele, ești invizibil:</h3>
             <ul className="space-y-6">
               {[
               "date structurate locale corecte în site",
@@ -247,12 +247,12 @@ const Index = () => {
               map((item, i) =>
               <FadeIn key={i} delay={i * 0.1} className="flex items-start gap-4">
                   <XCircle className="w-8 h-8 text-destructive shrink-0 mt-1" />
-                  <span className="text-xl md:text-2xl font-medium text-muted-foreground">{item}</span>
+                  <span className="text-base md:text-2xl font-medium text-muted-foreground">{item}</span>
                 </FadeIn>
               )}
             </ul>
             <FadeIn delay={0.6} className="mt-12 pt-8 border-t border-border text-center">
-              <p className="font-display text-4xl uppercase">
+              <p className="font-display text-2xl md:text-4xl uppercase">
                 fără ele, <span className="text-muted-foreground">nu vei intra în top 3.</span>
               </p>
             </FadeIn>
@@ -264,7 +264,7 @@ const Index = () => {
       <Section className="bg-foreground">
         <div className="text-center max-w-5xl mx-auto">
           <FadeIn>
-            <h2 className="font-display text-6xl md:text-8xl uppercase mb-12 text-background">
+            <h2 className="font-display text-4xl sm:text-6xl md:text-8xl uppercase mb-8 md:mb-12 text-background">
               noi facem un singur lucru.
             </h2>
           </FadeIn>
@@ -280,10 +280,10 @@ const Index = () => {
             </FadeIn>
           </div>
           <FadeIn delay={0.5}>
-            <div className="font-display text-7xl md:text-[8rem] leading-none uppercase mb-8 text-brand">
+            <div className="font-display text-5xl md:text-[8rem] leading-none uppercase mb-6 md:mb-8 text-brand">
               TOP 3.
             </div>
-            <p className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-background">
+            <p className="text-2xl md:text-5xl font-bold uppercase tracking-tight text-background">
               și garantăm asta.
             </p>
           </FadeIn>
@@ -295,18 +295,18 @@ const Index = () => {
         <ShieldCheck className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] text-foreground/[0.02] pointer-events-none" />
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <FadeIn>
-            <div className="inline-flex items-center justify-center gap-4 p-6 bg-foreground/5 border border-border rounded-full mb-8">
-              <ShieldCheck className="w-16 h-16 text-brand" />
-              <span className="font-display text-4xl md:text-5xl uppercase text-brand">garanție</span>
+            <div className="inline-flex items-center justify-center gap-3 md:gap-4 p-4 md:p-6 bg-foreground/5 border border-border rounded-full mb-6 md:mb-8">
+              <ShieldCheck className="w-10 h-10 md:w-16 md:h-16 text-brand" />
+              <span className="font-display text-2xl md:text-5xl uppercase text-brand">garanție</span>
             </div>
-            <h2 className="font-display text-5xl md:text-7xl uppercase mb-8">
+            <h2 className="font-display text-3xl sm:text-5xl md:text-7xl uppercase mb-6 md:mb-8">
               dacă nu ajungi în top 3 în 90 de zile,<br />
               <span className="text-muted-foreground">continuăm optimizarea</span><br />
               <span className="text-brand">fără costuri suplimentare</span><br />
               <span className="text-muted-foreground">până ajungi.</span>
             </h2>
             <div className="h-1 w-32 bg-brand mx-auto mb-8"></div>
-            <p className="text-2xl md:text-4xl font-bold uppercase tracking-wide">
+            <p className="text-xl md:text-4xl font-bold uppercase tracking-wide">
               nu plătești pentru promisiuni.<br />
               plătești pentru rezultat.
             </p>
@@ -317,13 +317,13 @@ const Index = () => {
       {/* 6. PREȚURI */}
       <Section className="bg-secondary border-t border-border">
         <FadeIn>
-          <h2 className="font-display text-5xl md:text-7xl uppercase text-center mb-20">
+          <h2 className="font-display text-3xl sm:text-5xl md:text-7xl uppercase text-center mb-10 md:mb-20">
             alege nivelul de <span className="text-brand">dominare</span>
           </h2>
         </FadeIn>
-        <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-center">
+        <div className="grid lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto items-center">
           {/* Elite */}
-          <FadeIn delay={0.1} className="bg-card border border-border p-8 flex flex-col h-full">
+          <FadeIn delay={0.1} className="bg-card border border-border p-5 md:p-8 flex flex-col h-full">
             <div className="mb-8">
               <h3 className="font-display text-3xl uppercase text-brand mb-2">Elite</h3>
               <p className="text-sm text-muted-foreground font-medium h-10">(pentru control absolut în oraș)</p>
@@ -347,7 +347,7 @@ const Index = () => {
           </FadeIn>
 
           {/* Accelerator */}
-          <FadeIn delay={0.2} className="bg-brand text-foreground p-10 transform lg:scale-110 shadow-2xl shadow-primary/20 relative z-10 flex flex-col h-full">
+          <FadeIn delay={0.2} className="bg-brand text-foreground p-6 md:p-10 transform lg:scale-110 shadow-2xl shadow-primary/20 relative z-10 flex flex-col h-full mt-4 lg:mt-0">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background text-foreground px-4 py-1 text-sm font-bold uppercase tracking-widest border border-primary">
               CEL MAI ALES
             </div>
@@ -372,7 +372,7 @@ const Index = () => {
           </FadeIn>
 
           {/* Starter */}
-          <FadeIn delay={0.3} className="bg-card border border-border p-8 flex flex-col h-full">
+          <FadeIn delay={0.3} className="bg-card border border-border p-5 md:p-8 flex flex-col h-full">
             <div className="mb-8">
               <h3 className="font-display text-3xl uppercase text-muted-foreground mb-2">Starter</h3>
               <p className="text-sm text-muted-foreground font-medium h-10">(pentru un început strategic)</p>
@@ -393,7 +393,7 @@ const Index = () => {
           </FadeIn>
         </div>
         <FadeIn delay={0.5} className="mt-20 text-center max-w-3xl mx-auto">
-          <p className="text-2xl md:text-4xl font-display text-muted-foreground uppercase leading-tight">
+          <p className="text-lg md:text-4xl font-display text-muted-foreground uppercase leading-tight">
             indiferent dacă un client îți aduce 100€ sau 4.000€,<br />
             nu valoarea unui client este problema.<br />
             <span className="text-foreground mt-[5px] inline-block">problema este câți pleacă la concurență… în fiecare lună.</span>
@@ -404,14 +404,14 @@ const Index = () => {
       {/* 7. FILTRU */}
       <Section className="bg-foreground text-background py-16">
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-          <AlertTriangle className="w-16 h-16 text-brand mb-6" />
-          <h2 className="font-display text-4xl md:text-5xl uppercase mb-6">
+          <AlertTriangle className="w-12 h-12 md:w-16 md:h-16 text-brand mb-4 md:mb-6" />
+          <h2 className="font-display text-3xl md:text-5xl uppercase mb-4 md:mb-6">
             nu lucrăm cu oricine.
           </h2>
-          <p className="text-xl md:text-2xl font-bold max-w-2xl mx-auto mb-4">
+          <p className="text-lg md:text-2xl font-bold max-w-2xl mx-auto mb-3 md:mb-4">
             Nu optimizăm 2 competitori direcți în același oraș.
           </p>
-          <p className="text-lg text-background/60 font-medium uppercase tracking-wider">
+          <p className="text-base md:text-lg text-background/60 font-medium uppercase tracking-wider">
             verificăm eligibilitatea serviciului în orașul tău înainte de colaborare.
           </p>
         </div>
@@ -420,7 +420,7 @@ const Index = () => {
       {/* Contact Form */}
       <Section className="bg-background border-t border-border" id="contact">
         <FadeIn>
-          <h2 className="font-display text-5xl md:text-7xl uppercase text-center mb-4">
+          <h2 className="font-display text-3xl sm:text-5xl md:text-7xl uppercase text-center mb-4">
             VREAU <span className="text-brand">ANALIZA</span> GRATUITĂ
           </h2>
           <p className="text-center text-muted-foreground mb-12 text-lg">
@@ -433,7 +433,7 @@ const Index = () => {
       {/* 8. FAQ */}
       <Section className="bg-secondary border-t border-border">
         <FadeIn>
-          <h2 className="font-display text-5xl md:text-7xl uppercase text-center mb-16">
+          <h2 className="font-display text-3xl sm:text-5xl md:text-7xl uppercase text-center mb-10 md:mb-16">
             Întrebări <span className="text-brand">frecvente</span> ale clienților sceptici
           </h2>
         </FadeIn>
@@ -458,11 +458,11 @@ const Index = () => {
           ].map((faq, i) => (
             <FadeIn key={i} delay={i * 0.1}>
               <details className="group bg-card border border-border p-6 cursor-pointer">
-                <summary className="text-xl md:text-2xl font-medium list-none flex items-center justify-between gap-4">
+                <summary className="text-lg md:text-2xl font-medium list-none flex items-center justify-between gap-3 md:gap-4">
                   {faq.q}
                   <span className="text-brand text-3xl font-bold transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <div className="mt-4 text-lg text-muted-foreground font-medium leading-relaxed space-y-4">
+                <div className="mt-3 md:mt-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed space-y-3 md:space-y-4">
                   {faq.a.split('\n\n').map((paragraph, j) => (
                     <p key={j}>{paragraph}</p>
                   ))}
@@ -476,7 +476,7 @@ const Index = () => {
       {/* 9. CTA FINAL */}
       <Section className="bg-background min-h-[70vh] flex flex-col justify-center items-center text-center">
         <FadeIn>
-           <h2 className="font-display text-6xl md:text-[8rem] uppercase mb-12" style={{ lineHeight: 1.3 }}>
+           <h2 className="font-display text-4xl sm:text-6xl md:text-[8rem] uppercase mb-8 md:mb-12" style={{ lineHeight: 1.3 }}>
              există doar <span className="text-brand">3 locuri.</span><br />
              <StrokeRevealText text="unul poate fi al tău." />
            </h2>

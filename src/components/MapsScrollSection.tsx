@@ -75,14 +75,14 @@ const MapsScrollSection: React.FC = () => {
   return (
     <>
       {/* Spacer so cards are fully visible before pin starts */}
-      <section className="bg-background py-20 md:py-28 text-center px-6">
-        <h2 className="font-display text-4xl md:text-6xl uppercase text-foreground mb-4">
+      <section className="bg-background py-14 md:py-28 text-center px-4 md:px-6">
+        <h2 className="font-display text-3xl sm:text-4xl md:text-6xl uppercase text-foreground mb-4">
           asta văd clienții tăi <span className="text-brand">acum.</span>
         </h2>
         <motion.p
-          className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto"
+          className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto px-2"
           initial={{ scale: 1 }}
-          whileInView={{ scale: 1.5 }}
+          whileInView={{ scale: 1.2 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
