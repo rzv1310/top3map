@@ -134,7 +134,7 @@ const Index = () => {
             ))}
           </div>
           <FadeIn delay={0.4} className="flex flex-col items-center justify-center text-center">
-            <div className="text-4xl md:text-6xl font-display uppercase text-brand mb-8">
+            <div className="text-4xl md:text-6xl font-display uppercase text-foreground mb-8 pb-4 border-b-4 border-primary inline-block">
               în timp ce
             </div>
             <p className="text-2xl md:text-4xl font-bold text-muted-foreground">
