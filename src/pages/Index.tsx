@@ -158,7 +158,7 @@ const Index = () => {
       <Section>
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <h2 className="font-display text-5xl md:text-7xl uppercase mb-6 text-center">
+            <h2 className="font-display text-5xl md:text-7xl uppercase mb-16 text-center">
               ai deja site.<br/>
               dar site-ul tău <StrokeRevealText text="nu domină local." />
             </h2>
