@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Navigation, Calendar, CheckCircle2, XCircle, AlertTriangle, ShieldCheck, Trophy, Target, ArrowRight } from 'lucide-react';
 import MapsScrollSection from '@/components/MapsScrollSection';
+import StrokeRevealText from '@/components/StrokeRevealText';
 
 const FadeIn: React.FC<{ children: React.ReactNode; delay?: number; className?: string }> = ({ children, delay = 0, className = "" }) => (
   <motion.div
@@ -94,7 +95,7 @@ const Index = () => {
           >
             <h1 className="font-display text-6xl sm:text-7xl md:text-[6rem] leading-[0.85] uppercase mb-8">
               dacă nu ești în <span className="text-brand">top 3</span> în google maps,<br/>
-              <span className="text-stroke">nu exiști.</span>
+              <StrokeRevealText text="nu exiști." />
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground font-medium mb-10 max-w-xl leading-relaxed">
               atât de simplu.<br/>
@@ -152,7 +153,7 @@ const Index = () => {
           <FadeIn>
             <h2 className="font-display text-5xl md:text-7xl uppercase mb-6 text-center">
               ai deja site.<br/>
-              dar site-ul tău <span className="text-stroke">nu domină local.</span>
+              dar site-ul tău <StrokeRevealText text="nu domină local." />
             </h2>
           </FadeIn>
           <div className="mt-16 bg-card border border-border p-8 md:p-12">
@@ -337,7 +338,7 @@ const Index = () => {
         <FadeIn>
           <h2 className="font-display text-6xl md:text-[8rem] leading-[0.85] uppercase mb-12">
             există doar <span className="text-brand">3 locuri.</span><br/>
-            <span className="text-stroke">unul poate fi al tău.</span>
+            <StrokeRevealText text="unul poate fi al tău." />
           </h2>
           <div className="flex justify-center">
             <CtaButton className="text-xl md:text-2xl py-6 px-10">
