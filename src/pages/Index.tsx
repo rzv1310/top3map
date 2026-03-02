@@ -323,7 +323,7 @@ const Index = () => {
           <p className="text-2xl md:text-4xl font-display text-muted-foreground uppercase leading-tight">
             indiferent dacă un client îți aduce 100€ sau 4.000€,<br/>
             nu valoarea unui client este problema.<br/>
-            <span className="text-foreground">problema este câți pleacă la concurență… în fiecare lună.</span>
+            <span className="text-foreground mt-[5px] inline-block">problema este câți pleacă la concurență… în fiecare lună.</span>
           </p>
         </FadeIn>
       </Section>
