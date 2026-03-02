@@ -127,8 +127,8 @@ const Index = () => {
                 <div className="flex items-center gap-6 p-6 bg-foreground/5 border border-border hover:bg-foreground/10 transition-colors">
                   <motion.div
                     className="text-brand"
-                    initial={{ rotateX: 0 }}
-                    whileInView={{ rotateX: 360 }}
+                    initial={{ rotateY: 0 }}
+                    whileInView={{ rotateY: 360 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 2, delay: i * 0.15, ease: "easeInOut" }}
                     style={{ perspective: 200 }}
