@@ -185,14 +185,17 @@ const ContactForm: React.FC = () => {
 
 
 const CtaButton: React.FC<{children: React.ReactNode;className?: string;}> = ({ children, className = "" }) =>
-<motion.button
+<motion.a
+  href="https://wa.me/40742702982"
+  target="_blank"
+  rel="noopener noreferrer"
   whileHover={{ scale: 1.02 }}
   whileTap={{ scale: 0.98 }}
   className={`bg-brand hover:bg-brand-hover text-foreground font-bold uppercase tracking-wider py-5 px-8 md:px-12 text-lg md:text-xl transition-colors flex items-center justify-center gap-3 w-full sm:w-auto ${className}`}>
   
     {children}
     <ArrowRight className="w-6 h-6" />
-  </motion.button>;
+  </motion.a>;
 
 
 const HeroMapPack = () =>
@@ -535,9 +538,9 @@ const Index = () => {
               <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> consultant dedicat 120 h/lună</li>
               <li className="flex items-start gap-3 mt-4 pt-4 border-t border-border font-bold"><Target className="w-5 h-5 text-brand shrink-0" /> <span className="font-normal">GARANȚIE</span> TOP 3 INCLUSĂ</li>
             </ul>
-            <button className="w-full py-4 border border-border hover:bg-foreground/5 font-bold uppercase tracking-wider transition-colors">
+            <a href="https://wa.me/40742702982" target="_blank" rel="noopener noreferrer" className="block w-full py-4 border border-border hover:bg-foreground/5 font-bold uppercase tracking-wider transition-colors text-center">
               Aplică pentru Elite
-            </button>
+            </a>
           </FadeIn>
 
           {/* Accelerator */}
@@ -563,9 +566,9 @@ const Index = () => {
               <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 shrink-0" /> exclusivitate pe nișă + oraș</li>
               <li className="flex items-start gap-3 mt-4 pt-4 border-t border-foreground/20 font-bold text-lg"><Target className="w-6 h-6 shrink-0" /> <span className="font-normal">GARANȚIE</span> TOP 3 INCLUSĂ</li>
             </ul>
-            <button className="w-full py-5 bg-background text-foreground hover:bg-background/90 font-bold uppercase tracking-wider transition-colors text-lg">
+            <a href="https://wa.me/40742702982" target="_blank" rel="noopener noreferrer" className="block w-full py-5 bg-background text-foreground hover:bg-background/90 font-bold uppercase tracking-wider transition-colors text-lg text-center">
               Vreau Top 3
-            </button>
+            </a>
           </FadeIn>
 
           {/* Starter */}
@@ -584,9 +587,9 @@ const Index = () => {
               <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-muted-foreground shrink-0" /> fără abonament lunar</li>
               <li className="flex items-start gap-3 text-destructive/50 mt-4 pt-4 border-t border-border"><XCircle className="w-5 h-5 shrink-0" /> fără garanție top 3</li>
             </ul>
-            <button className="w-full py-4 border border-border hover:bg-foreground/5 font-bold uppercase tracking-wider transition-colors">
+            <a href="https://wa.me/40742702982" target="_blank" rel="noopener noreferrer" className="block w-full py-4 border border-border hover:bg-foreground/5 font-bold uppercase tracking-wider transition-colors text-center">
               Alege Starter
-            </button>
+            </a>
           </FadeIn>
         </div>
         <FadeIn delay={0.5} className="mt-20 text-center max-w-3xl mx-auto">
