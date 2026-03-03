@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
   { label: 'Prețuri', href: '#preturi' },
@@ -75,38 +74,30 @@ const Header: React.FC = () => {
       </div>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-background/95 backdrop-blur-md border-b border-border overflow-hidden"
-          >
-            <nav className="flex flex-col px-4 py-6 gap-4">
-              {navLinks.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => handleNavClick(link.href)}
-                  className="text-left text-lg font-medium text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wider py-2"
-                >
-                  {link.label}
-                </button>
-              ))}
-              <a
-                href="https://wa.me/40742702982"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-brand hover:bg-brand-hover text-foreground font-bold text-base uppercase tracking-wider px-5 py-3 transition-colors mt-2"
+      {menuOpen && (
+        <div className="md:hidden bg-background/95 backdrop-blur-md border-b border-border overflow-hidden animate-in fade-in slide-in-from-top-2 duration-300">
+          <nav className="flex flex-col px-4 py-6 gap-4">
+            {navLinks.map((link) => (
+              <button
+                key={link.href}
+                onClick={() => handleNavClick(link.href)}
+                className="text-left text-lg font-medium text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wider py-2"
               >
-                <Phone className="w-5 h-5" />
-                +40 742 702 982
-              </a>
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                {link.label}
+              </button>
+            ))}
+            <a
+              href="https://wa.me/40742702982"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-brand hover:bg-brand-hover text-foreground font-bold text-base uppercase tracking-wider px-5 py-3 transition-colors mt-2"
+            >
+              <Phone className="w-5 h-5" />
+              +40 742 702 982
+            </a>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };
