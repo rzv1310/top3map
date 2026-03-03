@@ -164,7 +164,7 @@ const HeroMapPack = () =>
     <motion.div
     animate={{ y: [0, -10, 0] }}
     transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-    className="absolute -bottom-6 -left-10 bg-brand text-foreground font-display uppercase px-6 py-4 text-2xl rotate-3 shadow-xl">
+    className="absolute -bottom-6 -left-10 bg-background text-foreground font-display uppercase px-6 py-4 text-2xl rotate-3 shadow-xl border border-brand">
     
       Primii 3 iau 90% din trafic
     </motion.div>
@@ -188,7 +188,8 @@ const Index = () => {
               <StrokeRevealText text="nu exiști." />
             </h1>
             <p className="text-lg md:text-2xl text-muted-foreground font-medium mb-8 md:mb-10 max-w-xl leading-relaxed">
-              Atât de simplu.<br />
+              Atât de simplu.
+              <br className="md:hidden" /><span className="block h-4 md:hidden"></span>
               Când cineva caută serviciul tău în oraș, vede doar 3 rezultate.<br />
               <span className="text-foreground font-bold">restul sunt ignorate.</span>
             </p>
