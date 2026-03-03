@@ -464,8 +464,8 @@ const Index = () => {
             <FadeIn key={i} delay={i * 0.1}>
               <details className="group bg-card border border-border p-6 cursor-pointer">
                 <summary className="text-lg md:text-2xl font-medium list-none flex items-center justify-between gap-3 md:gap-4">
-                  {faq.q}
-                  <span className="text-brand text-3xl font-bold transition-transform group-open:rotate-45">+</span>
+                  <h3 className="text-left font-medium text-lg md:text-2xl">{faq.q}</h3>
+                  <span className="text-brand text-3xl font-bold transition-transform group-open:rotate-45 shrink-0">+</span>
                 </summary>
                 <div className="mt-3 md:mt-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed space-y-3 md:space-y-4">
                   {faq.a.split('\n\n').map((paragraph, j) => (
