@@ -431,7 +431,7 @@ const Index = () => {
             </p>
             <span className="block h-4"></span>
             <span className="block h-4"></span>
-            <p className="text-xl md:text-4xl text-foreground">
+            <p className="text-xl md:text-4xl text-foreground leading-[1.5] md:leading-[1.5]">
               problema este câți pleacă la concurență<br className="md:hidden" />{" "}
               <span className="text-[22px] md:text-4xl">… în fiecare lună.</span>
             </p>
