@@ -532,6 +532,7 @@ const Index = () => {
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
           <span>© {new Date().getFullYear()} SEO Doctor</span>
           <div className="flex items-center gap-4">
+            <a href="https://wa.me/40770376498" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">0770 376 498</a>
             <Link to="/termeni" className="hover:text-foreground transition-colors">Termeni și condiții</Link>
             <Link to="/gdpr" className="hover:text-foreground transition-colors">GDPR</Link>
             <Link to="/cookies" className="hover:text-foreground transition-colors">Cookies</Link>
