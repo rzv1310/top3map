@@ -7,6 +7,23 @@ const NotFound = () => {
 
   useEffect(() => {
     console.error("404 Error: User attempted to access non-existent route:", location.pathname);
+    document.title = "404 - Pagina nu a fost găsită | SEO Doctor";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) {
+      meta.setAttribute("content", "Pagina pe care o cauți nu există. Revino pe site-ul SEO Doctor pentru optimizare SEO și Google Maps în București.");
+    } else {
+      const newMeta = document.createElement("meta");
+      newMeta.name = "description";
+      newMeta.content = "Pagina pe care o cauți nu există. Revino pe site-ul SEO Doctor pentru optimizare SEO și Google Maps în București.";
+      document.head.appendChild(newMeta);
+    }
+    const robots = document.querySelector('meta[name="robots"]');
+    if (!robots) {
+      const newRobots = document.createElement("meta");
+      newRobots.name = "robots";
+      newRobots.content = "noindex, follow";
+      document.head.appendChild(newRobots);
+    }
   }, [location.pathname]);
 
   return (
