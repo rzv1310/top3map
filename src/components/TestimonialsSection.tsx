@@ -62,25 +62,26 @@ const TESTIMONIALS = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="bg-background border-t border-border py-16 md:py-24 lg:py-32 px-4 md:px-6">
+    <section className="bg-background border-t border-border px-4 md:px-6">
       <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="text-center mb-10 md:mb-16">
-            <p className="text-brand uppercase tracking-widest text-sm font-bold mb-4">
-              Testimoniale
-            </p>
-            <h2 className="font-display text-3xl sm:text-5xl md:text-7xl uppercase text-foreground">
-              Ce spun clienții noștri
-            </h2>
+        <ContainerScroll className="h-[220vh]">
+          <div className="sticky top-0 pt-16 md:pt-24 lg:pt-32 pb-6 z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="text-center">
+                <p className="text-brand uppercase tracking-widest text-sm font-bold mb-4">
+                  Testimoniale
+                </p>
+                <h2 className="font-display text-3xl sm:text-5xl md:text-7xl uppercase text-foreground">
+                  Ce spun clienții noștri
+                </h2>
+              </div>
+            </motion.div>
           </div>
-        </motion.div>
-
-        <ContainerScroll className="h-[190vh]">
           <CardsContainer className="h-[50vh] w-full max-w-xl">
             {TESTIMONIALS.map((testimonial, index) => (
               <CardTransformed
