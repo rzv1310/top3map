@@ -32,6 +32,7 @@ const ContactForm: React.FC = () => {
   const [form, setForm] = useState({ nume: '', telefon: '', oras: '', website: '' });
   const [loading, setLoading] = useState(false);
   const [telefonError, setTelefonError] = useState('');
+  const [gdprConsent, setGdprConsent] = useState(false);
 
   const validateTelefon = (value: string): boolean => {
     if (!value.trim()) return false;
@@ -55,6 +56,10 @@ const ContactForm: React.FC = () => {
       return;
     }
     if (!validateTelefon(form.telefon)) {
+      return;
+    }
+    if (!gdprConsent) {
+      toast.error('Trebuie să accepți politica de confidențialitate.');
       return;
     }
     setLoading(true);
@@ -84,20 +89,28 @@ const ContactForm: React.FC = () => {
     <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-4">
       <input type="hidden" name="form-name" value="contact" />
       <FadeIn delay={0.1}>
-        <Input
-          name="nume"
-          placeholder="Nume *"
-          value={form.nume}
-          onChange={e => setForm(f => ({ ...f, nume: e.target.value }))}
-          className="bg-card border-border text-foreground placeholder:text-muted-foreground h-14 text-lg"
-        />
+        <div>
+          <label htmlFor="nume" className="text-sm font-medium text-muted-foreground mb-1 block">Nume *</label>
+          <Input
+            id="nume"
+            name="nume"
+            placeholder="Nume"
+            required
+            value={form.nume}
+            onChange={e => setForm(f => ({ ...f, nume: e.target.value }))}
+            className="bg-card border-border text-foreground placeholder:text-muted-foreground h-14 text-lg"
+          />
+        </div>
       </FadeIn>
       <FadeIn delay={0.15}>
         <div>
+          <label htmlFor="telefon" className="text-sm font-medium text-muted-foreground mb-1 block">Telefon *</label>
           <Input
+            id="telefon"
             name="telefon"
-            placeholder="Telefon *"
+            placeholder="Telefon"
             type="tel"
+            required
             value={form.telefon}
             onChange={e => {
               const val = e.target.value;
@@ -112,22 +125,49 @@ const ContactForm: React.FC = () => {
         </div>
       </FadeIn>
       <FadeIn delay={0.2}>
-        <Input
-          name="oras"
-          placeholder="Oraș *"
-          value={form.oras}
-          onChange={e => setForm(f => ({ ...f, oras: e.target.value }))}
-          className="bg-card border-border text-foreground placeholder:text-muted-foreground h-14 text-lg"
-        />
+        <div>
+          <label htmlFor="oras" className="text-sm font-medium text-muted-foreground mb-1 block">Oraș *</label>
+          <Input
+            id="oras"
+            name="oras"
+            placeholder="Oraș"
+            required
+            value={form.oras}
+            onChange={e => setForm(f => ({ ...f, oras: e.target.value }))}
+            className="bg-card border-border text-foreground placeholder:text-muted-foreground h-14 text-lg"
+          />
+        </div>
       </FadeIn>
       <FadeIn delay={0.25}>
-        <Input
-          name="website"
-          placeholder="Website (opțional)"
-          value={form.website}
-          onChange={e => setForm(f => ({ ...f, website: e.target.value }))}
-          className="bg-card border-border text-foreground placeholder:text-muted-foreground h-14 text-lg"
-        />
+        <div>
+          <label htmlFor="website" className="text-sm font-medium text-muted-foreground mb-1 block">Website (opțional)</label>
+          <Input
+            id="website"
+            name="website"
+            placeholder="https://exemplu.ro"
+            type="url"
+            value={form.website}
+            onChange={e => setForm(f => ({ ...f, website: e.target.value }))}
+            className="bg-card border-border text-foreground placeholder:text-muted-foreground h-14 text-lg"
+          />
+        </div>
+      </FadeIn>
+      <FadeIn delay={0.28}>
+        <label className="flex items-start gap-3 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={gdprConsent}
+            onChange={e => setGdprConsent(e.target.checked)}
+            className="mt-1 h-5 w-5 accent-primary shrink-0"
+            required
+          />
+          <span className="text-sm text-muted-foreground">
+            Sunt de acord cu{' '}
+            <a href="/gdpr" target="_blank" className="text-brand hover:underline">Politica de confidențialitate</a>
+            {' '}și{' '}
+            <a href="/termeni" target="_blank" className="text-brand hover:underline">Termenii și condițiile</a>. *
+          </span>
+        </label>
       </FadeIn>
       <FadeIn delay={0.3}>
         <Button
