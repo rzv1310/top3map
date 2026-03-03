@@ -427,7 +427,7 @@ const Index = () => {
             </p>
             <span className="block h-4 md:hidden"></span>
             <p className="text-xl md:text-4xl">
-              nu valoarea unui client este problema.
+              <span className="bg-[#FF1E00] px-1">nu valoarea unui client</span> este problema.
             </p>
             <span className="block h-4"></span>
             <span className="block h-4"></span>
