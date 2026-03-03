@@ -127,7 +127,7 @@ export const CardTransformed = React.forwardRef<HTMLDivElement, CardStickyProps>
 
     const y = useTransform(scrollYProgress, [start, end], isLast ? ["0%", "0%"] : ["0%", "-130%"])
     const opacity = useTransform(scrollYProgress, isLast ? [0, 1] : [start, end * 0.9, end], isLast ? [1, 1] : [1, 1, 0])
-    const rotate = useTransform(scrollYProgress, [Math.max(0, start - 0.05), start], [idleRotation, 0])
+    const rotate = useTransform(scrollYProgress, [Math.max(0, start - 0.05), start], isLast ? [0, 0] : [idleRotation, 0])
 
     const cardStyle = {
       top: index * incrementY,
