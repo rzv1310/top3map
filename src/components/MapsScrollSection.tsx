@@ -35,7 +35,7 @@ const MobileSlider: React.FC = () => {
   }, []);
 
   return (
-    <section className="bg-background py-14 px-0 overflow-hidden">
+    <section className="bg-background py-14 px-0" style={{ overflowX: 'clip', overflowY: 'visible' }}>
       <div className="px-4 mb-6">
         <h2 className="font-display text-3xl sm:text-4xl uppercase text-foreground mb-4 text-center">
           asta văd clienții tăi <span className="text-brand">acum.</span>
