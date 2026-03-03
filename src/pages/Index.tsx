@@ -420,14 +420,21 @@ const Index = () => {
           </FadeIn>
         </div>
         <FadeIn delay={0.5} className="mt-20 text-center max-w-3xl mx-auto">
-          <p className="text-xl md:text-4xl font-display text-muted-foreground uppercase" style={{ lineHeight: 1.5 }}>
-            indiferent dacă un client îți aduce<br className="md:hidden" />{" "}
-            100€ sau 4.000€,<br className="md:hidden" />
+          <div className="font-display text-muted-foreground uppercase" style={{ lineHeight: 1.5 }}>
+            <p className="text-[24px] md:text-4xl">
+              indiferent dacă un client îți aduce<br className="md:hidden" />{" "}
+              100€ sau 4.000€,<br className="md:hidden" />
+            </p>
             <span className="block h-4 md:hidden"></span>
-            nu valoarea unui client este problema.<br />
+            <p className="text-xl md:text-4xl">
+              nu valoarea unui client este problema.
+            </p>
             <span className="block h-4"></span>
-            <span className="text-foreground">problema este câți pleacă la concurență<br className="md:hidden" />{" "}… în fiecare lună.</span>
-          </p>
+            <p className="text-xl md:text-4xl text-foreground">
+              problema este câți pleacă la concurență<br className="md:hidden" />{" "}
+              <span className="text-[22px] md:text-4xl">… în fiecare lună.</span>
+            </p>
+          </div>
         </FadeIn>
       </Section>
 
