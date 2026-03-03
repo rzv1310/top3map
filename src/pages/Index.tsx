@@ -159,13 +159,13 @@ const ContactForm: React.FC = () => {
             id="gdpr"
             checked={gdprConsent}
             onCheckedChange={(checked) => setGdprConsent(checked === true)}
-            className="mt-0.5 border-border data-[state=checked]:bg-primary data-[state=checked]:border-primary"
+            className="mt-0.5 border-primary bg-primary data-[state=checked]:bg-primary data-[state=checked]:border-primary"
           />
           <label htmlFor="gdpr" className="text-sm text-muted-foreground cursor-pointer leading-relaxed">
             Sunt de acord cu{' '}
-            <a href="/gdpr" target="_blank" className="text-brand hover:underline">Politica de confidențialitate</a>
+            <a href="/gdpr" target="_blank" className="text-foreground hover:underline">Politica de confidențialitate</a>
             {' '}și{' '}
-            <a href="/termeni" target="_blank" className="text-brand hover:underline">Termenii și condițiile</a>. *
+            <a href="/termeni" target="_blank" className="text-foreground hover:underline">Termenii și condițiile</a>. *
           </label>
         </div>
       </FadeIn>
