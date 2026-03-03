@@ -59,7 +59,7 @@ const MobileSlider: React.FC = () => {
       >
         {images.map((src, i) => {
           // Map index to size index: 4th card (i=3) same as 1st (i=0), 5th (i=4) same as 3rd (i=2)
-          const sizeIndex = i >= 3 ? i - 3 : i;
+          const sizeIndex = (i === 0 || i === 3 || i === 6) ? 0 : (i >= 3 ? i - 3 : i);
           const scale = 1 - sizeIndex * 0.04;
           const rotation = (i % 2 === 0 ? 1 : -1) * (i * 2);
           return (
