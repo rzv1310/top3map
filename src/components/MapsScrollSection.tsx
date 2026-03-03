@@ -65,7 +65,7 @@ const MobileSlider: React.FC = () => {
           return (
             <motion.div
               key={i}
-              className="snap-center shrink-0 rounded-2xl overflow-hidden border border-border"
+              className="snap-center shrink-0 rounded-2xl overflow-hidden"
               style={{
                 width: `${75 - sizeIndex * 3}vw`,
                 maxWidth: `${300 - sizeIndex * 15}px`,
@@ -182,7 +182,7 @@ const DesktopCarousel: React.FC = () => {
               <div
                 key={i}
                 ref={(el) => { cardRefs.current[i] = el; }}
-                className="absolute inset-0 rounded-2xl overflow-hidden border border-border will-change-transform"
+                className="absolute inset-0 rounded-2xl overflow-hidden will-change-transform"
                 style={{
                   ...getCardStyle(i),
                   boxShadow: `0 ${4 + i * 2}px ${20 + i * 5}px rgba(255, 30, 0, ${0.05 + i * 0.02})`,
