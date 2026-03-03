@@ -58,15 +58,17 @@ const MobileSlider: React.FC = () => {
         style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {images.map((src, i) => {
-          const scale = 1 - i * 0.04;
+          // Map index to size index: 4th card (i=3) same as 1st (i=0), 5th (i=4) same as 3rd (i=2)
+          const sizeIndex = i >= 3 ? i - 3 : i;
+          const scale = 1 - sizeIndex * 0.04;
           const rotation = (i % 2 === 0 ? 1 : -1) * (i * 2);
           return (
             <motion.div
               key={i}
               className="snap-center shrink-0 rounded-2xl overflow-hidden border border-border"
               style={{
-                width: `${75 - i * 3}vw`,
-                maxWidth: `${300 - i * 15}px`,
+                width: `${75 - sizeIndex * 3}vw`,
+                maxWidth: `${300 - sizeIndex * 15}px`,
               }}
               initial={{ opacity: 0, scale: 0.7, rotate: rotation * 2 }}
               whileInView={{ opacity: 1, scale, rotate: rotation }}
