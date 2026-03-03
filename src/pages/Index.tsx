@@ -30,11 +30,30 @@ const Section: React.FC<{children: React.ReactNode;className?: string;id?: strin
 const ContactForm: React.FC = () => {
   const [form, setForm] = useState({ nume: '', telefon: '', oras: '', website: '' });
   const [loading, setLoading] = useState(false);
+  const [telefonError, setTelefonError] = useState('');
+
+  const validateTelefon = (value: string): boolean => {
+    if (!value.trim()) return false;
+    if (/[^0-9+\s]/.test(value)) {
+      setTelefonError('Numarul introdus nu este corect');
+      return false;
+    }
+    const digits = value.replace(/[^0-9]/g, '');
+    if (digits.length < 10) {
+      setTelefonError('Numarul introdus nu este corect');
+      return false;
+    }
+    setTelefonError('');
+    return true;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.nume.trim() || !form.telefon.trim() || !form.oras.trim()) {
       toast.error('Completează câmpurile obligatorii.');
+      return;
+    }
+    if (!validateTelefon(form.telefon)) {
       return;
     }
     setLoading(true);
@@ -73,14 +92,23 @@ const ContactForm: React.FC = () => {
         />
       </FadeIn>
       <FadeIn delay={0.15}>
-        <Input
-          name="telefon"
-          placeholder="Telefon *"
-          type="tel"
-          value={form.telefon}
-          onChange={e => setForm(f => ({ ...f, telefon: e.target.value }))}
-          className="bg-card border-border text-foreground placeholder:text-muted-foreground h-14 text-lg"
-        />
+        <div>
+          <Input
+            name="telefon"
+            placeholder="Telefon *"
+            type="tel"
+            value={form.telefon}
+            onChange={e => {
+              const val = e.target.value;
+              if (val === '' || /^[0-9+\s]*$/.test(val)) {
+                setForm(f => ({ ...f, telefon: val }));
+                if (telefonError) setTelefonError('');
+              }
+            }}
+            className={`bg-card border-border text-foreground placeholder:text-muted-foreground h-14 text-lg ${telefonError ? 'border-red-500' : ''}`}
+          />
+          {telefonError && <p className="text-red-500 text-sm mt-1">{telefonError}</p>}
+        </div>
       </FadeIn>
       <FadeIn delay={0.2}>
         <Input
