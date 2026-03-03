@@ -1,7 +1,8 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 import maps1 from '@/assets/maps-1.jpeg';
 import maps2 from '@/assets/maps-2.jpeg';
@@ -15,7 +16,84 @@ gsap.registerPlugin(ScrollTrigger);
 
 const images = [maps1, maps2, maps3, maps4, maps5, maps6, maps7];
 
-const MapsScrollSection: React.FC = () => {
+const MobileSlider: React.FC = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const handleScroll = () => {
+      const scrollLeft = el.scrollLeft;
+      const cardWidth = el.offsetWidth * 0.75 + 16; // card width + gap
+      const index = Math.round(scrollLeft / cardWidth);
+      setActiveIndex(Math.min(index, images.length - 1));
+    };
+
+    el.addEventListener('scroll', handleScroll, { passive: true });
+    return () => el.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <section className="bg-background py-14 px-0 overflow-hidden">
+      <div className="px-4 mb-6">
+        <h2 className="font-display text-3xl sm:text-4xl uppercase text-foreground mb-4 text-center">
+          asta văd clienții tăi <span className="text-brand">acum.</span>
+        </h2>
+        <motion.p
+          className="text-base text-muted-foreground max-w-2xl mx-auto px-2 text-center"
+          initial={{ scale: 1 }}
+          whileInView={{ scale: 1.2 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          în fiecare oraș, în fiecare nișă - numai{" "}
+          <span className="text-brand font-bold">3 rezultate</span> contează.
+        </motion.p>
+      </div>
+
+      <div
+        ref={scrollRef}
+        className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-4 pb-6 scrollbar-hide"
+        style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      >
+        {images.map((src, i) => (
+          <motion.div
+            key={i}
+            className="snap-center shrink-0 rounded-2xl overflow-hidden border border-border"
+            style={{ width: '75vw', maxWidth: '300px' }}
+            initial={{ opacity: 0, scale: 0.85, rotateY: -15 }}
+            whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
+            viewport={{ once: true, margin: "-20px" }}
+            transition={{ duration: 0.5, delay: i * 0.05, ease: "easeOut" }}
+          >
+            <img
+              src={src}
+              alt={`Google Maps rezultat ${i + 1}`}
+              className="w-full aspect-[9/19] object-cover object-top"
+              loading="lazy"
+            />
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Dot indicators */}
+      <div className="flex justify-center gap-2 mt-2">
+        {images.map((_, i) => (
+          <div
+            key={i}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              i === activeIndex ? 'bg-brand w-6' : 'bg-foreground/20'
+            }`}
+          />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+const DesktopCarousel: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -43,8 +121,6 @@ const MapsScrollSection: React.FC = () => {
 
       cards.forEach((card, i) => {
         if (i === totalCards - 1) return;
-
-        // Dead zone hold, then dramatic exit
         tl.to(card, { duration: 0.3 }, i * 1);
         tl.to(card, {
           yPercent: -150,
@@ -60,11 +136,10 @@ const MapsScrollSection: React.FC = () => {
     return () => ctx.revert();
   }, []);
 
-  // Fan offsets: each card peeks out below + rotated like held cards
   const getCardStyle = (i: number) => {
-    const rotation = (i - 3) * 3; // spread from -9 to +9 degrees
-    const offsetY = i * 12; // each card 12px lower
-    const offsetX = (i - 3) * 8; // slight horizontal spread
+    const rotation = (i - 3) * 3;
+    const offsetY = i * 12;
+    const offsetX = (i - 3) * 8;
     return {
       zIndex: images.length - i,
       transform: `translateY(${offsetY}px) translateX(${offsetX}px) rotate(${rotation}deg)`,
@@ -74,19 +149,18 @@ const MapsScrollSection: React.FC = () => {
 
   return (
     <>
-      {/* Spacer so cards are fully visible before pin starts */}
-      <section className="bg-background py-14 md:py-28 text-center px-4 md:px-6">
-        <h2 className="font-display text-3xl sm:text-4xl md:text-6xl uppercase text-foreground mb-4">
+      <section className="bg-background py-28 text-center px-6">
+        <h2 className="font-display text-4xl md:text-6xl uppercase text-foreground mb-4">
           asta văd clienții tăi <span className="text-brand">acum.</span>
         </h2>
         <motion.p
-          className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto px-2"
+          className="text-xl text-muted-foreground max-w-2xl mx-auto"
           initial={{ scale: 1 }}
           whileInView={{ scale: 1.2 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          în fiecare oraș, în fiecare nișă - numai<br className="md:hidden" />{" "}
+          în fiecare oraș, în fiecare nișă - numai{" "}
           <span className="text-brand font-bold">3 rezultate</span> contează.
         </motion.p>
       </section>
@@ -95,7 +169,7 @@ const MapsScrollSection: React.FC = () => {
         className="relative h-screen w-full bg-background overflow-hidden"
       >
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="relative w-[240px] sm:w-[280px] md:w-[320px] aspect-[9/19]">
+          <div className="relative w-[280px] md:w-[320px] aspect-[9/19]">
             {images.map((src, i) => (
               <div
                 key={i}
@@ -119,6 +193,11 @@ const MapsScrollSection: React.FC = () => {
       </section>
     </>
   );
+};
+
+const MapsScrollSection: React.FC = () => {
+  const isMobile = useIsMobile();
+  return isMobile ? <MobileSlider /> : <DesktopCarousel />;
 };
 
 export default MapsScrollSection;
