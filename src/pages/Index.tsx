@@ -30,24 +30,41 @@ const ContactForm: React.FC = () => {
   const [form, setForm] = useState({ nume: '', telefon: '', oras: '', website: '' });
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.nume.trim() || !form.telefon.trim() || !form.oras.trim()) {
       toast.error('Completează câmpurile obligatorii.');
       return;
     }
     setLoading(true);
-    setTimeout(() => {
+    try {
+      const formData = new URLSearchParams();
+      formData.append('form-name', 'contact');
+      formData.append('nume', form.nume);
+      formData.append('telefon', form.telefon);
+      formData.append('oras', form.oras);
+      formData.append('website', form.website);
+
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: formData.toString(),
+      });
       toast.success('Mulțumim! Te contactăm în curând.');
       setForm({ nume: '', telefon: '', oras: '', website: '' });
+    } catch {
+      toast.error('Eroare la trimitere. Încearcă din nou.');
+    } finally {
       setLoading(false);
-    }, 800);
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-4">
+    <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-4">
+      <input type="hidden" name="form-name" value="contact" />
       <FadeIn delay={0.1}>
         <Input
+          name="nume"
           placeholder="Nume *"
           value={form.nume}
           onChange={e => setForm(f => ({ ...f, nume: e.target.value }))}
@@ -56,6 +73,7 @@ const ContactForm: React.FC = () => {
       </FadeIn>
       <FadeIn delay={0.15}>
         <Input
+          name="telefon"
           placeholder="Telefon *"
           type="tel"
           value={form.telefon}
@@ -65,6 +83,7 @@ const ContactForm: React.FC = () => {
       </FadeIn>
       <FadeIn delay={0.2}>
         <Input
+          name="oras"
           placeholder="Oraș *"
           value={form.oras}
           onChange={e => setForm(f => ({ ...f, oras: e.target.value }))}
@@ -73,6 +92,7 @@ const ContactForm: React.FC = () => {
       </FadeIn>
       <FadeIn delay={0.25}>
         <Input
+          name="website"
           placeholder="Website (opțional)"
           value={form.website}
           onChange={e => setForm(f => ({ ...f, website: e.target.value }))}
