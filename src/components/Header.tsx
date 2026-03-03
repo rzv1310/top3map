@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
+import logo from '@/assets/logo_seo-doctor.jpeg';
 
 const navLinks = [
   { label: 'Prețuri', href: '#preturi' },
@@ -36,9 +37,9 @@ const Header: React.FC = () => {
         <a
           href="#"
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-          className="font-display text-2xl md:text-3xl uppercase text-foreground tracking-wider"
+          className="flex items-center gap-2"
         >
-          SEO <span className="text-brand">Doctor</span>
+          <img src={logo} alt="SEO Doctor" className="h-10 md:h-12 w-auto" />
         </a>
 
         {/* Desktop Nav */}
