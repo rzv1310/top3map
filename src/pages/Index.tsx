@@ -293,7 +293,7 @@ const Index = () => {
             "streetAddress": "Str. Câmpia Libertății 33",
             "addressLocality": "București",
             "addressRegion": "Sector 3",
-            "postalCode": "032071",
+            "postalCode": "030365",
             "addressCountry": "RO"
           },
           "openingHoursSpecification": [
