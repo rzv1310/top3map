@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Navigation, Calendar, CheckCircle2, XCircle, AlertTriangle, ShieldCheck, Trophy, Target, ArrowRight, DollarSign, Send } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -242,6 +242,105 @@ const HeroMapPack = () =>
 
 
 const Index = () => {
+  useEffect(() => {
+    const faqItems = [
+      { q: "În cât timp ajung în top 3?", a: "Depinde de competiție, de obicei în 60 de zile, dar dacă depășim 90 de zile - lucrăm gratis până la rezultat, conform garanției." },
+      { q: "Cum puteți garanta top 3?", a: "Garantăm atingerea poziției top 3 în piețele pe care le validăm ca eligibile. Lucrăm doar în orașe și nișe unde analiza inițială arată că există spațiu real de creștere. Nu acceptăm colaborări unde competiția sau istoricul profilului fac obiectivul nerealist. Înainte de a începe, facem o analiză completă a: competiției locale, autorității actuale, istoricului profilului, volumului de căutări, nivelului de optimizare existent. Dacă analiza arată că obiectivul este realist, acceptăm colaborarea și oferim garanția." },
+      { q: "Am mai lucrat cu o agenție și nu a funcționat. Care este diferența?", a: "Majoritatea agențiilor fac SEO la modul general. Noi lucrăm exclusiv pentru harta Google și poziționare locală strategică, cu obiectiv unic: top 3." },
+      { q: "Ce se întâmplă dacă Google schimbă algoritmul?", a: "Monitorizăm constant pozițiile și ajustăm strategia. Mentenanța există tocmai pentru adaptare continuă la schimbările algoritmice sau ale concurenței." },
+      { q: "Dacă ajung în top 3, primesc garantat clienți?", a: "Top 3 îți oferă vizibilitate maximă. Numărul exact de clienți depinde de cererea din piață și de rata ta de conversie. Înainte de a începe colaborarea, îți vom spune câți oameni din orașul tău caută lunar serviciul prestat de tine." },
+      { q: "Cât trebuie să mă implic?", a: "Minim. Vom avea o conversație telefonică de 30 min în care îți spunem ce avem nevoie de la tine - acces, poze, echipă, adresă etc. și anumite validări punctuale. Restul implementării este gestionat integral de noi." },
+      { q: "Există obligații pe termen lung?", a: "Implementarea va avea un termen clar și scurt, stabilit la primul telefon. Mentenanța este lunară și poate fi ajustată în funcție de rezultate." },
+      { q: "Ce se întâmplă dacă deja sunt pe locul 4 sau 5?", a: "Cu atât mai bine. Intervenția este mai rapidă și necesită mai puține ajustări strategice. În harta Google sunt vizibili doar primii 3 - aproape nimeni nu dă click pe 'vezi mai multe locații', deci probabil că nu ai multe telefoane dacă ești pe locul 4. Vei simți impact pozitiv!" },
+      { q: "Lucrați cu concurența mea?", a: "Nu optimizăm 2 competitori direcți în același oraș. Exclusivitatea locală este parte din strategia și din garanția noastră." },
+      { q: "Pot pierde poziția dacă opresc mentenanța?", a: "Da, în piețe competitive poziția poate fluctua fără protecție și fără ajustări continue." },
+      { q: "De ce nu este mai ieftin?", a: "Pentru că nu vindem trafic sau promisiuni. Vindem poziționare strategică într-un spațiu limitat la doar 3 locuri." },
+      { q: "De ce să plătesc atât când pot face singur?", a: "Nu credem că poți face și singur. Oferta din această pagină este, probabil, unică în România. Întrebarea este cât te costă timpul de testare, greșelile și anii pierduți până la rezultat. Poziționarea în top 3 nu ține doar de setări vizibile, ci de structură tehnică, corelări strategice și semnale comportamentale care necesită experiență și execuție precisă." },
+      { q: "Aveți rezultate dovedite? Studii de caz?", a: "Da. Înainte de colaborare prezentăm exemple relevante din piețe similare. Însă mai important decât un studiu de caz este analiza orașului tău - fiecare piață este diferită, iar decizia se bazează pe datele concrete din zona ta." },
+      { q: "Funcționează și pentru nișa mea?", a: "Mecanismul map pack este același indiferent de industrie. Diferența este nivelul de competiție și structura pieței locale. Înainte de a accepta colaborarea, analizăm exact nișa și orașul tău pentru a valida eligibilitatea." },
+      { q: "Recenziile negative mă pot afecta chiar și în top 3?", a: "Da, recenziile influențează conversia și poziționarea. De aceea, strategia include structurarea și optimizarea reputației online. Nu doar numărul de recenzii contează, ci distribuția, frecvența și răspunsurile. Top 3 îți aduce vizibilitate - reputația îți aduce conversie." },
+      { q: "Am deja clienți suficienți. De ce aș mai investi?", a: "Dacă ai deja clienți, întrebarea este: vrei stabilitate sau vrei control? Poziția în top 3 nu înseamnă doar mai mulți clienți, ci protecție împotriva concurenței și predictibilitate pe termen lung. Piețele locale devin mai competitive în fiecare an." },
+    ];
+
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://local.seo-doctor.ro/#organization",
+          "name": "SEO Doctor",
+          "url": "https://local.seo-doctor.ro/",
+          "logo": "https://local.seo-doctor.ro/og-image.png",
+          "email": "hello@seo-doctor.ro",
+          "telephone": "+40742702982",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+40742702982",
+            "contactType": "customer service",
+            "email": "hello@seo-doctor.ro",
+            "availableLanguage": ["Romanian"]
+          }
+        },
+        {
+          "@type": ["LocalBusiness", "ProfessionalService"],
+          "@id": "https://local.seo-doctor.ro/#localbusiness",
+          "name": "SEO Doctor",
+          "url": "https://local.seo-doctor.ro/",
+          "telephone": "+40742702982",
+          "email": "hello@seo-doctor.ro",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Str. Câmpia Libertății 33",
+            "addressLocality": "București",
+            "addressRegion": "Sector 3",
+            "postalCode": "032071",
+            "addressCountry": "RO"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+              "opens": "00:00",
+              "closes": "23:59"
+            }
+          ],
+          "parentOrganization": { "@id": "https://local.seo-doctor.ro/#organization" }
+        },
+        {
+          "@type": "Service",
+          "name": "Optimizare SEO",
+          "description": "Serviciu profesional de optimizare SEO locală pentru Google Maps. Garantăm poziția top 3 în harta Google.",
+          "provider": { "@id": "https://local.seo-doctor.ro/#localbusiness" },
+          "areaServed": {
+            "@type": "Country",
+            "name": "Romania"
+          },
+          "serviceType": "SEO local"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": faqItems.map(item => ({
+            "@type": "Question",
+            "name": item.q,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": item.a
+            }
+          }))
+        }
+      ]
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(jsonLd);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection-brand overflow-x-hidden">
       <Header />
