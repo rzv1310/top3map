@@ -92,7 +92,7 @@ export const CardsContainer: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   return (
     <div
       ref={containerRef}
-      className={cn("sticky top-[30vh] mx-auto", className)}
+      className={cn("sticky top-[35vh] mx-auto", className)}
       {...props}
     >
       {children}
@@ -186,7 +186,7 @@ export const ReviewStars = React.forwardRef<HTMLDivElement, ReviewProps>(
             </svg>
           ))}
         </div>
-        <span className="text-sm font-medium text-foreground">{rating}</span>
+        
       </div>
     )
   }

@@ -64,8 +64,8 @@ const TestimonialsSection = () => {
   return (
     <section className="bg-background border-t border-border px-4 md:px-6">
       <div className="max-w-6xl mx-auto">
-        <ContainerScroll className="h-[220vh]">
-          <div className="sticky top-0 pt-16 md:pt-24 lg:pt-32 pb-6 z-10">
+        <ContainerScroll className="h-[250vh]">
+          <div className="sticky top-0 pt-16 md:pt-24 lg:pt-32 pb-[120px] z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
