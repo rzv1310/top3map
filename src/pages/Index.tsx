@@ -343,7 +343,7 @@ const Index = () => {
             alege nivelul de <span className="text-brand font-normal">dominare</span>
           </h2>
         </FadeIn>
-        <div className="grid lg:grid-cols-3 gap-[100px] md:gap-[50px] max-w-6xl mx-auto items-center">
+        <div className="grid lg:grid-cols-3 gap-[150px] md:gap-[50px] max-w-6xl mx-auto items-center">
           {/* Elite */}
           <FadeIn delay={0.1} className="bg-card border border-border p-5 md:p-8 flex flex-col h-full">
             <div className="mb-8">
