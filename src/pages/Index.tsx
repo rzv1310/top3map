@@ -346,7 +346,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans selection-brand overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground font-sans selection-brand">
       <Header />
       {/* 1. HERO */}
       <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center px-4 md:px-6 pt-24 md:pt-28 pb-10 md:pb-12 overflow-hidden">
