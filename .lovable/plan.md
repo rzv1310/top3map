@@ -1,13 +1,23 @@
 
 
-## Plan
+## Plan: Add JSON-LD Schema Markup (LocalBusiness, Service, FAQPage, Organization)
 
-Update the comparison text sizes in `src/pages/Index.tsx`:
+### What
+Add structured data to `src/pages/Index.tsx` via a single `<script type="application/ld+json">` injected into `<head>` using `useEffect`.
 
-1. Split the text into separate elements with different mobile font sizes:
-   - "indiferent dacă un client îți aduce 100€ sau 4.000€," → `text-[24px] md:text-4xl`
-   - "nu valoarea unui client este problema." and "problema este câți pleacă la concurență" → keep `text-xl md:text-4xl`
-   - "… în fiecare lună." → `text-[22px] md:text-4xl`
+### Details
 
-This requires restructuring the single `<p>` tag into multiple elements or using `<span>` wrappers with different size classes for mobile.
+**File**: `src/pages/Index.tsx`
+
+1. Extract the FAQ array (16 items, lines 550-566) into a constant before the component return.
+2. Add a `useEffect` that creates and appends a JSON-LD script to `document.head` with a `@graph` containing:
+
+   - **Organization**: name, url, logo, email, phone, sameAs
+   - **LocalBusiness** (`ProfessionalService` subtype): name, address (Str. Campia Libertății 33, sector 3, București), phone, email, url, `openingHoursSpecification` set to **24/7** (all 7 days, 00:00-23:59)
+   - **Service**: name "Optimizare SEO", provider reference to the LocalBusiness
+   - **FAQPage**: `mainEntity` mapped from the 16 FAQ items, with `\n\n` in answers replaced by spaces
+
+3. Cleanup: remove the script on unmount.
+
+No new files or dependencies needed. Single edit to `src/pages/Index.tsx`.
 
