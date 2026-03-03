@@ -92,7 +92,7 @@ export const CardsContainer: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   return (
     <div
       ref={containerRef}
-      className={cn("sticky top-[20vh] mx-auto", className)}
+      className={cn("sticky top-[30vh] mx-auto", className)}
       {...props}
     >
       {children}
