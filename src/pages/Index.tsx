@@ -494,7 +494,7 @@ const Index = () => {
             { q: "Recenziile negative mă pot afecta chiar și în top 3?", a: "Da, recenziile influențează conversia și poziționarea.\n\nDe aceea, strategia include structurarea și optimizarea reputației online.\n\nNu doar numărul de recenzii contează, ci distribuția, frecvența și răspunsurile.\n\nTop 3 îți aduce vizibilitate - reputația îți aduce conversie." },
             { q: "Am deja clienți suficienți. De ce aș mai investi?", a: "Dacă ai deja clienți, întrebarea este: vrei stabilitate sau vrei control?\n\nPoziția în top 3 nu înseamnă doar mai mulți clienți, ci protecție împotriva concurenței și predictibilitate pe termen lung.\n\nPiețele locale devin mai competitive în fiecare an." },
           ].map((faq, i) => (
-            <FadeIn key={i} delay={i * 0.1}>
+            <FadeIn key={i} delay={Math.min(i * 0.05, 0.3)}>
               <details className="group bg-card border border-border p-6 cursor-pointer">
                 <summary className="text-lg md:text-2xl font-medium list-none flex items-center justify-between gap-3 md:gap-4">
                   <h3 className="text-left font-medium text-lg md:text-2xl">{faq.q}</h3>
