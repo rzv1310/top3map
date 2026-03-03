@@ -318,7 +318,7 @@ const Index = () => {
           <FadeIn>
             <div className="inline-flex items-center justify-center gap-3 md:gap-4 p-4 md:p-6 bg-foreground/5 border border-border rounded-full mb-6 md:mb-8">
               <ShieldCheck className="w-10 h-10 md:w-16 md:h-16 text-brand" />
-              <span className="font-display text-2xl md:text-5xl uppercase text-brand font-normal">garanție</span>
+              <span className="font-display text-2xl md:text-5xl uppercase text-brand font-light md:font-normal">garanție</span>
             </div>
             <h2 className="font-display text-3xl sm:text-5xl md:text-7xl uppercase mb-6 md:mb-8" style={{ lineHeight: 1.5 }}>
               dacă nu ajungi în top 3<br className="md:hidden" />{" "}
@@ -343,18 +343,18 @@ const Index = () => {
             alege nivelul de <span className="text-brand font-normal">dominare</span>
           </h2>
         </FadeIn>
-        <div className="grid lg:grid-cols-3 gap-[50px] md:gap-[50px] max-w-6xl mx-auto items-center">
+        <div className="grid lg:grid-cols-3 gap-[100px] md:gap-[50px] max-w-6xl mx-auto items-center">
           {/* Elite */}
           <FadeIn delay={0.1} className="bg-card border border-border p-5 md:p-8 flex flex-col h-full">
             <div className="mb-8">
-              <h3 className="font-display text-3xl uppercase text-brand mb-2">Elite</h3>
+              <h3 className="font-display text-3xl uppercase text-brand mb-2 font-normal md:font-bold">Elite</h3>
               <p className="text-sm text-muted-foreground font-medium h-10">(pentru control absolut în oraș)</p>
             </div>
             <div className="mb-8">
               <span className="text-5xl font-display">3500€</span>
               <div className="text-sm text-muted-foreground mt-1">implementare</div>
-              <div className="text-sm text-muted-foreground mt-3">+ 300€/lună mentenanță & protecție poziție</div>
-              <div className="text-sm text-muted-foreground opacity-70">(opțional · doar după atingerea obiectivului TOP 3)</div>
+              <div className="text-sm text-foreground mt-3">+ 300€/lună mentenanță & protecție poziție</div>
+              <div className="text-sm text-foreground opacity-70">(opțional · doar după atingerea obiectivului TOP 3)</div>
             </div>
             <ul className="space-y-4 mb-12 flex-1">
               <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> creare website de la zero</li>
@@ -382,8 +382,8 @@ const Index = () => {
             <div className="mb-8">
               <span className="text-6xl font-display">1900€</span>
               <div className="text-sm font-bold mt-1">implementare</div>
-              <div className="text-sm mt-3 opacity-90">+ 300€/lună mentenanță & protecție poziție</div>
-              <div className="text-sm opacity-70">(opțional · doar după atingerea obiectivului TOP 3)</div>
+              <div className="text-sm mt-3">+ 300€/lună mentenanță & protecție poziție</div>
+              <div className="text-sm opacity-90">(opțional · doar după atingerea obiectivului TOP 3)</div>
             </div>
             <ul className="space-y-4 mb-12 flex-1 font-medium">
               <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 shrink-0" /> audit complet</li>
@@ -422,10 +422,11 @@ const Index = () => {
         <FadeIn delay={0.5} className="mt-20 text-center max-w-3xl mx-auto">
           <p className="text-xl md:text-4xl font-display text-muted-foreground uppercase" style={{ lineHeight: 1.5 }}>
             indiferent dacă un client îți aduce<br className="md:hidden" />{" "}
-            100€ sau 4.000€,<br />
+            100€ sau 4.000€,<br className="md:hidden" />
+            <span className="block h-4 md:hidden"></span>
             nu valoarea unui client este problema.<br />
             <span className="block h-4"></span>
-            <span className="text-foreground">problema este câți pleacă la concurență… în fiecare lună.</span>
+            <span className="text-foreground">problema este câți pleacă la concurență<br className="md:hidden" />{" "}… în fiecare lună.</span>
           </p>
         </FadeIn>
       </Section>
