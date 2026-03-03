@@ -78,7 +78,7 @@ const MobileSlider: React.FC = () => {
               <img
                 src={src}
                 alt={`Google Maps rezultat ${i + 1}`}
-                className="w-full aspect-[9/17] object-contain object-top bg-background"
+                className="w-full h-auto block"
                 loading="lazy"
               />
             </motion.div>
@@ -191,7 +191,7 @@ const DesktopCarousel: React.FC = () => {
                 <img
                   src={src}
                   alt={`Google Maps rezultat ${i + 1}`}
-                  className="w-full h-full object-contain object-top bg-background"
+                  className="w-full h-full object-cover object-top"
                   loading="lazy"
                 />
               </div>
