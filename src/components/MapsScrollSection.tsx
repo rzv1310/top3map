@@ -2,7 +2,6 @@ import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useIsMobile } from '@/hooks/use-mobile';
 
 import maps1 from '@/assets/maps-1.jpeg';
 import maps2 from '@/assets/maps-2.jpeg';
@@ -196,8 +195,16 @@ const DesktopCarousel: React.FC = () => {
 };
 
 const MapsScrollSection: React.FC = () => {
-  const isMobile = useIsMobile();
-  return isMobile ? <MobileSlider /> : <DesktopCarousel />;
+  return (
+    <>
+      <div className="block md:hidden">
+        <MobileSlider />
+      </div>
+      <div className="hidden md:block">
+        <DesktopCarousel />
+      </div>
+    </>
+  );
 };
 
 export default MapsScrollSection;
