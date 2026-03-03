@@ -76,7 +76,7 @@ const MobileSlider: React.FC = () => {
               <img
                 src={src}
                 alt={`Google Maps rezultat ${i + 1}`}
-                className="w-full aspect-[9/19] object-cover object-top"
+                className="w-full aspect-[9/17] object-cover object-top"
                 loading="lazy"
               />
             </motion.div>
