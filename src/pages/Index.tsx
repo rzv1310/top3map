@@ -668,7 +668,7 @@ const Index = () => {
             { q: "Am deja clienți suficienți. De ce aș mai investi?", a: "Dacă ai deja clienți, întrebarea este: vrei stabilitate sau vrei control?\n\nPoziția în top 3 nu înseamnă doar mai mulți clienți, ci protecție împotriva concurenței și predictibilitate pe termen lung.\n\nPiețele locale devin mai competitive în fiecare an." },
           ].map((faq, i) => (
             <FadeIn key={i} delay={Math.min(i * 0.05, 0.3)}>
-              <details className="group bg-card border border-border p-6 cursor-pointer">
+              <details className="group bg-card border border-border p-6 cursor-pointer" {...(i === 0 ? { open: true } : {})}>
                 <summary className="text-lg md:text-2xl font-medium list-none flex items-center justify-between gap-3 md:gap-4">
                   <h3 className="text-left font-medium text-lg md:text-2xl">{faq.q}</h3>
                   <span className="text-brand text-3xl font-bold transition-transform group-open:rotate-45 shrink-0">+</span>
