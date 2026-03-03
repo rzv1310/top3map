@@ -188,7 +188,8 @@ const Index = () => {
               <StrokeRevealText text="nu exiști." />
             </h1>
             <p className="text-lg md:text-2xl text-muted-foreground font-medium mb-8 md:mb-10 max-w-xl leading-relaxed">
-              Atât de simplu.<br className="md:hidden" />{" "}
+              Atât de simplu.<br className="md:hidden" />
+              <span className="block h-4 md:hidden"></span>
               Când cineva caută serviciul tău în oraș, vede doar 3 rezultate.<br className="md:hidden" />{" "}
               <span className="text-foreground font-bold">Restul sunt ignorate.</span>
             </p>
@@ -201,7 +202,7 @@ const Index = () => {
       {/* 2. REALITATEA DURĂ */}
       <Section className="bg-secondary border-y border-border">
         <FadeIn>
-          <h2 className="font-display text-3xl sm:text-5xl md:text-7xl uppercase mb-4 text-center">
+          <h2 className="font-display text-3xl sm:text-5xl md:text-7xl uppercase mb-4 text-center" style={{ lineHeight: 1.6 }}>
             concurența ta nu e mai bună.<br />
             <span className="text-brand">e doar mai sus.</span>
           </h2>
@@ -251,7 +252,7 @@ const Index = () => {
             <h2 className="font-display text-3xl sm:text-5xl md:text-7xl uppercase mb-10 md:mb-16 text-center">
               ai deja site.
             </h2>
-            <h2 className="font-display text-3xl sm:text-5xl md:text-7xl uppercase mb-10 md:mb-16 text-center mt-6 md:mt-8">
+            <h2 className="font-display text-3xl sm:text-5xl md:text-7xl uppercase mb-10 md:mb-16 text-center mt-6 md:mt-8" style={{ lineHeight: 1.6 }}>
               dar site-ul tău <StrokeRevealText text="nu domină local." />
             </h2>
           </FadeIn>
@@ -317,10 +318,11 @@ const Index = () => {
           <FadeIn>
             <div className="inline-flex items-center justify-center gap-3 md:gap-4 p-4 md:p-6 bg-foreground/5 border border-border rounded-full mb-6 md:mb-8">
               <ShieldCheck className="w-10 h-10 md:w-16 md:h-16 text-brand" />
-              <span className="font-display text-2xl md:text-5xl uppercase text-brand">garanție</span>
+              <span className="font-display text-2xl md:text-5xl uppercase text-brand font-normal">garanție</span>
             </div>
-            <h2 className="font-display text-3xl sm:text-5xl md:text-7xl uppercase mb-6 md:mb-8">
-              dacă nu ajungi în top 3 în 90 de zile,<br />
+            <h2 className="font-display text-3xl sm:text-5xl md:text-7xl uppercase mb-6 md:mb-8" style={{ lineHeight: 1.5 }}>
+              dacă nu ajungi în top 3<br className="md:hidden" />{" "}
+              în 90 de zile,<br />
               <span className="text-muted-foreground">continuăm optimizarea</span><br />
               <span className="text-brand">fără costuri suplimentare</span><br />
               <span className="text-muted-foreground">până ajungi.</span>
@@ -338,10 +340,10 @@ const Index = () => {
       <Section className="bg-secondary border-t border-border">
         <FadeIn>
           <h2 className="font-display text-3xl sm:text-5xl md:text-7xl uppercase text-center mb-10 md:mb-20">
-            alege nivelul de <span className="text-brand">dominare</span>
+            alege nivelul de <span className="text-brand font-normal">dominare</span>
           </h2>
         </FadeIn>
-        <div className="grid lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto items-center">
+        <div className="grid lg:grid-cols-3 gap-[50px] md:gap-[50px] max-w-6xl mx-auto items-center">
           {/* Elite */}
           <FadeIn delay={0.1} className="bg-card border border-border p-5 md:p-8 flex flex-col h-full">
             <div className="mb-8">
@@ -351,8 +353,8 @@ const Index = () => {
             <div className="mb-8">
               <span className="text-5xl font-display">3500€</span>
               <div className="text-sm text-muted-foreground mt-1">implementare</div>
-              <div className="text-xs text-muted-foreground mt-3">+ 300€/lună mentenanță & protecție poziție</div>
-              <div className="text-xs text-muted-foreground opacity-70">(opțional · doar după atingerea obiectivului TOP 3)</div>
+              <div className="text-sm text-muted-foreground mt-3">+ 300€/lună mentenanță & protecție poziție</div>
+              <div className="text-sm text-muted-foreground opacity-70">(opțional · doar după atingerea obiectivului TOP 3)</div>
             </div>
             <ul className="space-y-4 mb-12 flex-1">
               <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> creare website de la zero</li>
@@ -361,7 +363,7 @@ const Index = () => {
               <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> optimizare tehnică avansată</li>
               <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> exclusivitate pe nișă + oraș</li>
               <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> consultant dedicat 120 h/lună</li>
-              <li className="flex items-start gap-3 mt-4 pt-4 border-t border-border font-bold"><Target className="w-5 h-5 text-brand shrink-0" /> GARANȚIE TOP 3 INCLUSĂ</li>
+              <li className="flex items-start gap-3 mt-4 pt-4 border-t border-border font-bold"><Target className="w-5 h-5 text-brand shrink-0" /> <span className="font-normal">GARANȚIE</span> TOP 3 INCLUSĂ</li>
             </ul>
             <button className="w-full py-4 border border-border hover:bg-foreground/5 font-bold uppercase tracking-wider transition-colors">
               Aplică pentru Elite
@@ -380,8 +382,8 @@ const Index = () => {
             <div className="mb-8">
               <span className="text-6xl font-display">1900€</span>
               <div className="text-sm font-bold mt-1">implementare</div>
-              <div className="text-xs mt-3 opacity-90">+ 300€/lună mentenanță & protecție poziție</div>
-              <div className="text-xs opacity-70">(opțional · doar după atingerea obiectivului TOP 3)</div>
+              <div className="text-sm mt-3 opacity-90">+ 300€/lună mentenanță & protecție poziție</div>
+              <div className="text-sm opacity-70">(opțional · doar după atingerea obiectivului TOP 3)</div>
             </div>
             <ul className="space-y-4 mb-12 flex-1 font-medium">
               <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 shrink-0" /> audit complet</li>
@@ -389,7 +391,7 @@ const Index = () => {
               <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 shrink-0" /> strategie autoritate locală</li>
               <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 shrink-0" /> management recenzii</li>
               <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 shrink-0" /> exclusivitate pe nișă + oraș</li>
-              <li className="flex items-start gap-3 mt-4 pt-4 border-t border-foreground/20 font-bold text-lg"><Target className="w-6 h-6 shrink-0" /> GARANȚIE TOP 3 INCLUSĂ</li>
+              <li className="flex items-start gap-3 mt-4 pt-4 border-t border-foreground/20 font-bold text-lg"><Target className="w-6 h-6 shrink-0" /> <span className="font-normal">GARANȚIE</span> TOP 3 INCLUSĂ</li>
             </ul>
             <button className="w-full py-5 bg-background text-foreground hover:bg-background/90 font-bold uppercase tracking-wider transition-colors text-lg">
               Vreau Top 3
@@ -418,10 +420,12 @@ const Index = () => {
           </FadeIn>
         </div>
         <FadeIn delay={0.5} className="mt-20 text-center max-w-3xl mx-auto">
-          <p className="text-lg md:text-4xl font-display text-muted-foreground uppercase leading-tight">
-            indiferent dacă un client îți aduce 100€ sau 4.000€,<br />
+          <p className="text-xl md:text-4xl font-display text-muted-foreground uppercase" style={{ lineHeight: 1.5 }}>
+            indiferent dacă un client îți aduce<br className="md:hidden" />{" "}
+            100€ sau 4.000€,<br />
             nu valoarea unui client este problema.<br />
-            <span className="text-foreground mt-[5px] inline-block">problema este câți pleacă la concurență… în fiecare lună.</span>
+            <span className="block h-4"></span>
+            <span className="text-foreground">problema este câți pleacă la concurență… în fiecare lună.</span>
           </p>
         </FadeIn>
       </Section>
@@ -501,7 +505,7 @@ const Index = () => {
       {/* 9. CTA FINAL */}
       <Section className="bg-background min-h-[70vh] flex flex-col justify-center items-center text-center">
         <FadeIn>
-           <h2 className="font-display text-4xl sm:text-6xl md:text-[8rem] uppercase mb-8 md:mb-12" style={{ lineHeight: 1.3 }}>
+           <h2 className="font-display text-4xl sm:text-6xl md:text-[8rem] uppercase mb-8 md:mb-12" style={{ lineHeight: 1.9 }}>
              există doar <span className="text-brand">3 locuri.</span><br />
              <StrokeRevealText text="unul poate fi al tău." />
            </h2>
