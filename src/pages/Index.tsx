@@ -188,7 +188,9 @@ const Index = () => {
               <StrokeRevealText text="nu exiști." />
             </h1>
             <p className="text-lg md:text-2xl text-muted-foreground font-medium mb-8 md:mb-10 max-w-xl leading-relaxed">
-              Atât de simplu. Când cineva caută serviciul tău în oraș, vede doar 3 rezultate. <span className="text-foreground font-bold">Restul sunt ignorate.</span>
+              Atât de simplu.<br className="md:hidden" />{" "}
+              Când cineva caută serviciul tău în oraș, vede doar 3 rezultate.<br className="md:hidden" />{" "}
+              <span className="text-foreground font-bold">Restul sunt ignorate.</span>
             </p>
             <CtaButton>vreau să fiu în top 3</CtaButton>
           </motion.div>
