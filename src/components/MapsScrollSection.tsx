@@ -54,7 +54,7 @@ const MobileSlider: React.FC = () => {
 
       <div
         ref={scrollRef}
-        className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-4 pb-6 scrollbar-hide"
+        className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-4 py-8 pb-10 scrollbar-hide"
         style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {images.map((src, i) => {
