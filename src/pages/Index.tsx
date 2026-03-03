@@ -9,6 +9,7 @@ import { toast } from 'sonner';
 import MapsScrollSection from '@/components/MapsScrollSection';
 import StrokeRevealText from '@/components/StrokeRevealText';
 import Header from '@/components/Header';
+import TestimonialsSection from '@/components/TestimonialsSection';
 
 const FadeIn: React.FC<{children: React.ReactNode;delay?: number;className?: string;}> = ({ children, delay = 0, className = "" }) =>
 <motion.div
@@ -611,6 +612,9 @@ const Index = () => {
           </div>
         </FadeIn>
       </Section>
+
+      {/* TESTIMONIALE */}
+      <TestimonialsSection />
 
       {/* 7. FILTRU */}
       <Section className="bg-foreground text-background py-16">
