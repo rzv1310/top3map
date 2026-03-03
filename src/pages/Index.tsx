@@ -705,6 +705,7 @@ const Index = () => {
           <span>© {new Date().getFullYear()} SEO Doctor</span>
           <div className="flex items-center gap-4">
             <a href="tel:+40742702982" className="text-foreground hover:text-primary transition-colors">+40 742 702 982</a>
+            <a href="mailto:hello@seo-doctor.ro" className="text-foreground hover:text-primary transition-colors">hello@seo-doctor.ro</a>
             <Link to="/termeni" className="hover:text-foreground transition-colors">Termeni și condiții</Link>
             <Link to="/gdpr" className="hover:text-foreground transition-colors">GDPR</Link>
             <Link to="/cookies" className="hover:text-foreground transition-colors">Cookies</Link>
