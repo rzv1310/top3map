@@ -57,24 +57,31 @@ const MobileSlider: React.FC = () => {
         className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-4 pb-6 scrollbar-hide"
         style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
-        {images.map((src, i) => (
-          <motion.div
-            key={i}
-            className="snap-center shrink-0 rounded-2xl overflow-hidden border border-border"
-            style={{ width: '75vw', maxWidth: '300px' }}
-            initial={{ opacity: 0, scale: 0.85, rotateY: -15 }}
-            whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
-            viewport={{ once: true, margin: "-20px" }}
-            transition={{ duration: 0.5, delay: i * 0.05, ease: "easeOut" }}
-          >
-            <img
-              src={src}
-              alt={`Google Maps rezultat ${i + 1}`}
-              className="w-full aspect-[9/19] object-cover object-top"
-              loading="lazy"
-            />
-          </motion.div>
-        ))}
+        {images.map((src, i) => {
+          const scale = 1 - i * 0.04;
+          const rotation = (i % 2 === 0 ? 1 : -1) * (i * 2);
+          return (
+            <motion.div
+              key={i}
+              className="snap-center shrink-0 rounded-2xl overflow-hidden border border-border"
+              style={{
+                width: `${75 - i * 3}vw`,
+                maxWidth: `${300 - i * 15}px`,
+              }}
+              initial={{ opacity: 0, scale: 0.7, rotate: rotation * 2 }}
+              whileInView={{ opacity: 1, scale, rotate: rotation }}
+              viewport={{ once: true, margin: "-20px" }}
+              transition={{ duration: 0.5, delay: i * 0.05, ease: "easeOut" }}
+            >
+              <img
+                src={src}
+                alt={`Google Maps rezultat ${i + 1}`}
+                className="w-full aspect-[9/19] object-cover object-top"
+                loading="lazy"
+              />
+            </motion.div>
+          );
+        })}
       </div>
 
       {/* Dot indicators */}
