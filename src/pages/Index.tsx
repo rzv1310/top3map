@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Navigation, Calendar, CheckCircle2, XCircle, AlertTriangle, ShieldCheck, Trophy, Target, ArrowRight, DollarSign, Send } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
@@ -525,6 +526,18 @@ const Index = () => {
           </div>
         </FadeIn>
       </Section>
+
+      {/* FOOTER */}
+      <footer className="border-t border-border py-6 px-4">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
+          <span>© {new Date().getFullYear()} SEO Doctor</span>
+          <div className="flex items-center gap-4">
+            <Link to="/termeni" className="hover:text-foreground transition-colors">Termeni și condiții</Link>
+            <Link to="/gdpr" className="hover:text-foreground transition-colors">GDPR</Link>
+            <Link to="/cookies" className="hover:text-foreground transition-colors">Cookies</Link>
+          </div>
+        </div>
+      </footer>
     </div>);
 
 };
