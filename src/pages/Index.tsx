@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 import MapsScrollSection from '@/components/MapsScrollSection';
 import StrokeRevealText from '@/components/StrokeRevealText';
+import Header from '@/components/Header';
 
 const FadeIn: React.FC<{children: React.ReactNode;delay?: number;className?: string;}> = ({ children, delay = 0, className = "" }) =>
 <motion.div
@@ -203,8 +204,9 @@ const HeroMapPack = () =>
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection-brand overflow-x-hidden">
+      <Header />
       {/* 1. HERO */}
-      <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center px-4 md:px-6 pt-16 md:pt-20 pb-10 md:pb-12 overflow-hidden">
+      <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center px-4 md:px-6 pt-24 md:pt-28 pb-10 md:pb-12 overflow-hidden">
         <div className="absolute inset-0 grid-background pointer-events-none"></div>
         <div className="max-w-6xl mx-auto w-full relative z-10 grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -366,7 +368,7 @@ const Index = () => {
       </Section>
 
       {/* 6. PREȚURI */}
-      <Section className="bg-secondary border-t border-border">
+      <Section className="bg-secondary border-t border-border" id="preturi">
         <FadeIn>
           <h2 className="font-display text-3xl sm:text-5xl md:text-7xl uppercase text-center mb-10 md:mb-20">
             alege nivelul de <span className="text-brand font-normal">dominare</span>
@@ -498,7 +500,7 @@ const Index = () => {
       </Section>
 
       {/* 8. FAQ */}
-      <Section className="bg-secondary border-t border-border">
+      <Section className="bg-secondary border-t border-border" id="faq">
         <FadeIn>
           <h2 className="font-display text-3xl sm:text-5xl md:text-7xl uppercase text-center mb-10 md:mb-16">
             Întrebări <span className="text-brand">frecvente</span> ale clienților sceptici
