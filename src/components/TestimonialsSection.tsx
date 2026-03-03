@@ -74,85 +74,50 @@ const TestimonialsSection = () => {
             <p className="text-brand uppercase tracking-widest text-sm font-bold mb-4">
               Testimoniale
             </p>
-            <h2 className="font-display text-3xl sm:text-5xl md:text-7xl uppercase text-foreground mb-4">
+            <h2 className="font-display text-3xl sm:text-5xl md:text-7xl uppercase text-foreground">
               Ce spun clienții noștri
             </h2>
-            <ReviewStars rating={5} className="justify-center" />
           </div>
         </motion.div>
 
-        {/* Desktop: scroll-driven card stack */}
-        <div className="hidden md:block">
-          <ContainerScroll className="h-[190vh]">
-            <CardsContainer className="h-[50vh] w-full max-w-xl">
-              {TESTIMONIALS.map((testimonial, index) => (
-                <CardTransformed
-                  key={testimonial.id}
-                  index={index}
-                  arrayLength={TESTIMONIALS.length}
-                  variant="dark"
-                  incrementY={12}
-                  incrementZ={10}
-                >
-                  <div className="flex flex-col items-center text-center gap-4">
-                    <ReviewStars rating={testimonial.rating} />
-                    <p className="text-foreground text-lg leading-relaxed">
-                      {testimonial.description}
+        <ContainerScroll className="h-[190vh]">
+          <CardsContainer className="h-[50vh] w-full max-w-xl">
+            {TESTIMONIALS.map((testimonial, index) => (
+              <CardTransformed
+                key={testimonial.id}
+                index={index}
+                arrayLength={TESTIMONIALS.length}
+                variant="dark"
+                incrementY={12}
+                incrementZ={10}
+              >
+                <div className="flex flex-col items-center text-center gap-4">
+                  <ReviewStars rating={testimonial.rating} />
+                  <p className="text-foreground text-lg leading-relaxed">
+                    {testimonial.description}
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <Avatar className="h-12 w-12 border border-border">
+                    <AvatarImage src={testimonial.avatarUrl} alt={testimonial.name} />
+                    <AvatarFallback className="bg-brand/20 text-brand text-sm font-bold">
+                      {testimonial.name.split(" ").map((n) => n[0]).join("")}
+                    </AvatarFallback>
+                  </Avatar>
+                  <div className="text-left">
+                    <p className="text-foreground font-bold text-sm">
+                      {testimonial.name}
+                    </p>
+                    <p className="text-muted-foreground text-xs">
+                      {testimonial.profession}
                     </p>
                   </div>
-
-                  <div className="flex items-center gap-3">
-                    <Avatar className="h-12 w-12 border border-border">
-                      <AvatarImage src={testimonial.avatarUrl} alt={testimonial.name} />
-                      <AvatarFallback className="bg-brand/20 text-brand text-sm font-bold">
-                        {testimonial.name.split(" ").map((n) => n[0]).join("")}
-                      </AvatarFallback>
-                    </Avatar>
-                    <div className="text-left">
-                      <p className="text-foreground font-bold text-sm">
-                        {testimonial.name}
-                      </p>
-                      <p className="text-muted-foreground text-xs">
-                        {testimonial.profession}
-                      </p>
-                    </div>
-                  </div>
-                </CardTransformed>
-              ))}
-            </CardsContainer>
-          </ContainerScroll>
-        </div>
-
-        {/* Mobile: simple stacked cards */}
-        <div className="md:hidden flex flex-col gap-6">
-          {TESTIMONIALS.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="bg-card border border-border p-6 rounded-2xl flex flex-col gap-4"
-            >
-              <ReviewStars rating={testimonial.rating} />
-              <p className="text-foreground text-base leading-relaxed">
-                {testimonial.description}
-              </p>
-              <div className="flex items-center gap-3 mt-2">
-                <Avatar className="h-10 w-10 border border-border">
-                  <AvatarImage src={testimonial.avatarUrl} alt={testimonial.name} />
-                  <AvatarFallback className="bg-brand/20 text-brand text-xs font-bold">
-                    {testimonial.name.split(" ").map((n) => n[0]).join("")}
-                  </AvatarFallback>
-                </Avatar>
-                <div>
-                  <p className="text-foreground font-bold text-sm">{testimonial.name}</p>
-                  <p className="text-muted-foreground text-xs">{testimonial.profession}</p>
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+              </CardTransformed>
+            ))}
+          </CardsContainer>
+        </ContainerScroll>
       </div>
     </section>
   );
