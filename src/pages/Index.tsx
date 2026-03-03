@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { MapPin, Phone, Navigation, Calendar, CheckCircle2, XCircle, AlertTriangle, ShieldCheck, Trophy, Target, ArrowRight, DollarSign, Send } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
+import { Checkbox } from '@/components/ui/checkbox';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 import MapsScrollSection from '@/components/MapsScrollSection';
@@ -144,8 +145,8 @@ const ContactForm: React.FC = () => {
           <Input
             id="website"
             name="website"
-            placeholder="https://exemplu.ro"
-            type="url"
+            placeholder="exemplu.ro"
+            type="text"
             value={form.website}
             onChange={e => setForm(f => ({ ...f, website: e.target.value }))}
             className="bg-card border-border text-foreground placeholder:text-muted-foreground h-14 text-lg"
@@ -153,21 +154,20 @@ const ContactForm: React.FC = () => {
         </div>
       </FadeIn>
       <FadeIn delay={0.28}>
-        <label className="flex items-start gap-3 cursor-pointer">
-          <input
-            type="checkbox"
+        <div className="flex items-start gap-3">
+          <Checkbox
+            id="gdpr"
             checked={gdprConsent}
-            onChange={e => setGdprConsent(e.target.checked)}
-            className="mt-1 h-5 w-5 accent-primary shrink-0"
-            required
+            onCheckedChange={(checked) => setGdprConsent(checked === true)}
+            className="mt-0.5 border-border data-[state=checked]:bg-primary data-[state=checked]:border-primary"
           />
-          <span className="text-sm text-muted-foreground">
+          <label htmlFor="gdpr" className="text-sm text-muted-foreground cursor-pointer leading-relaxed">
             Sunt de acord cu{' '}
             <a href="/gdpr" target="_blank" className="text-brand hover:underline">Politica de confidențialitate</a>
             {' '}și{' '}
             <a href="/termeni" target="_blank" className="text-brand hover:underline">Termenii și condițiile</a>. *
-          </span>
-        </label>
+          </label>
+        </div>
       </FadeIn>
       <FadeIn delay={0.3}>
         <Button
