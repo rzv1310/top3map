@@ -183,15 +183,12 @@ const Index = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}>
             
-            <h1 className="font-display text-[2.625rem] sm:text-[3.625rem] md:text-[5.875rem] leading-[1.3] uppercase mb-6 md:mb-8">
+            <h1 className="font-display text-[2.625rem] sm:text-[3.625rem] md:text-[5.75rem] leading-[1.3] uppercase mb-6 md:mb-8">
               dacă nu ești în <span className="text-brand">top 3</span> în google maps,<br />
               <StrokeRevealText text="nu exiști." />
             </h1>
             <p className="text-lg md:text-2xl text-muted-foreground font-medium mb-8 md:mb-10 max-w-xl leading-relaxed">
-              Atât de simplu.
-              <br className="md:hidden" /><span className="block h-4 md:hidden"></span>
-              Când cineva caută serviciul tău în oraș, vede doar 3 rezultate.<br />
-              <span className="text-foreground font-bold">restul sunt ignorate.</span>
+              Atât de simplu. Când cineva caută serviciul tău în oraș, vede doar 3 rezultate. <span className="text-foreground font-bold">Restul sunt ignorate.</span>
             </p>
             <CtaButton>vreau să fiu în top 3</CtaButton>
           </motion.div>
