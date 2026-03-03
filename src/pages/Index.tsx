@@ -183,7 +183,7 @@ const Index = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}>
             
-            <h1 className="font-display text-[2.625rem] sm:text-[3.625rem] md:text-[5.875rem] leading-[1.15] md:leading-[1.1] uppercase mb-6 md:mb-8">
+            <h1 className="font-display text-[2.625rem] sm:text-[3.625rem] md:text-[5.875rem] leading-[1.25] sm:leading-[1.2] md:leading-[1.1] uppercase mb-6 md:mb-8">
               dacă nu ești în <span className="text-brand">top 3</span> în google maps,<br />
               <StrokeRevealText text="nu exiști." />
             </h1>
