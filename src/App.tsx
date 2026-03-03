@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import CookieConsent from "./components/CookieConsent";
+import WhatsAppButton from "./components/WhatsAppButton";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import TermeniConditii from "./pages/TermeniConditii";
@@ -21,6 +22,7 @@ const App = () => (
       <BrowserRouter>
         <ScrollToTop />
         <CookieConsent />
+        <WhatsAppButton />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/termeni" element={<TermeniConditii />} />
