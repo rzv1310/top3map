@@ -363,7 +363,7 @@ const Index = () => {
               <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 shrink-0" /> audit complet</li>
               <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 shrink-0" /> optimizare site + google business</li>
               <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 shrink-0" /> strategie autoritate locală</li>
-              <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 shrink-0" /> monitorizare poziții</li>
+              <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 shrink-0" /> <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 shrink-0" /> management recenzii</li></li>
               <li className="flex items-start gap-3 mt-4 pt-4 border-t border-foreground/20 font-bold text-lg"><Target className="w-6 h-6 shrink-0" /> GARANȚIE TOP 3 INCLUSĂ</li>
             </ul>
             <button className="w-full py-5 bg-background text-foreground hover:bg-background/90 font-bold uppercase tracking-wider transition-colors text-lg">
