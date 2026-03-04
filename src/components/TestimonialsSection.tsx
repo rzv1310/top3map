@@ -1,4 +1,3 @@
-import * as React from "react";
 import { motion, useTransform } from "framer-motion";
 import {
   CardTransformed,
@@ -62,12 +61,15 @@ const TESTIMONIALS = [
   },
 ];
 
-const ScrollFadeHeader = ({ children }: { children: React.ReactNode }) => {
+const FadingHeader = ({ children }: { children: React.ReactNode }) => {
   const { scrollYProgress } = useContainerScrollContext();
   const opacity = useTransform(scrollYProgress, [0.65, 0.85], [1, 0]);
 
   return (
-    <motion.div className="sticky top-0 pt-16 md:pt-24 lg:pt-32 pb-[120px]" style={{ opacity }}>
+    <motion.div
+      className="sticky top-0 pt-16 md:pt-24 lg:pt-32 pb-[120px]"
+      style={{ opacity }}
+    >
       {children}
     </motion.div>
   );
@@ -77,8 +79,8 @@ const TestimonialsSection = () => {
   return (
     <section className="bg-background border-t border-border px-4 md:px-6">
       <div className="max-w-6xl mx-auto">
-        <ContainerScroll className="h-[250vh]">
-          <ScrollFadeHeader>
+        <ContainerScroll className="h-[250vh] mb-[15vh]">
+          <FadingHeader>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -94,7 +96,7 @@ const TestimonialsSection = () => {
                 </h2>
               </div>
             </motion.div>
-          </ScrollFadeHeader>
+          </FadingHeader>
           <CardsContainer className="h-[50vh] w-full max-w-xl z-20">
             {TESTIMONIALS.map((testimonial, index) => (
               <CardTransformed
@@ -111,7 +113,6 @@ const TestimonialsSection = () => {
                     {testimonial.description}
                   </p>
                 </div>
-
                 <div className="flex items-center gap-3">
                   <Avatar className="h-12 w-12 border border-border">
                     <AvatarImage src={testimonial.avatarUrl} alt={testimonial.name} />
