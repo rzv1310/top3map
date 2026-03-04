@@ -595,7 +595,7 @@ const Index = () => {
         </div>
         <FadeIn delay={0.5} className="mt-20 text-center max-w-3xl mx-auto">
           <div className="font-display text-muted-foreground uppercase" style={{ lineHeight: 1.5 }}>
-            <p className="text-[24px] md:text-4xl">
+            <p className="text-[24px] md:text-4xl md:mb-[1.3rem]">
               indiferent dacă un client îți aduce<br className="md:hidden" />{" "}
               100€ sau 4.000€,<br className="md:hidden" />
             </p>
