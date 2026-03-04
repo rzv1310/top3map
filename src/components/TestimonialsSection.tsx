@@ -1,9 +1,11 @@
-import { motion } from "framer-motion";
+import * as React from "react";
+import { motion, useTransform } from "framer-motion";
 import {
   CardTransformed,
   CardsContainer,
   ContainerScroll,
   ReviewStars,
+  useContainerScrollContext,
 } from "@/components/ui/animated-cards-stack";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
@@ -14,7 +16,7 @@ const TESTIMONIALS = [
     profession: "Avocat, București",
     rating: 5,
     description:
-      "Site-ul meu e senzațional! Designul e foarte elegant, se încarcă rapid, iar colegii mei avocați sunt invidioși. Cea mai bună investiție făcută.",
+      "De când sunt în Top 3 pe Google Maps, primesc de 3 ori mai multe apeluri de la clienți noi. Colegii avocați mă întreabă cum am reușit. Cea mai bună investiție făcută.",
     avatarUrl:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop",
   },
@@ -24,7 +26,7 @@ const TESTIMONIALS = [
     profession: "Proprietar Clinică Medicală",
     rating: 5,
     description:
-      "Sincer, nu credeam că e posibil așa un site profi în 24 de ore. M-am înșelat. Totul arată exact cum mi-am dorit și funcționează perfect pe mobil. Mulțumesc Oana ❤️❤️❤️",
+      "Sincer, nu credeam că o să ajung pe prima pagină în Google Maps atât de repede. M-am înșelat. Pacienții ne găsesc imediat, programările au explodat. Mulțumesc echipei ❤️❤️❤️",
     avatarUrl:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&auto=format&fit=crop",
   },
@@ -34,7 +36,7 @@ const TESTIMONIALS = [
     profession: "Medic, Piatra Neamț",
     rating: 5,
     description:
-      "Am avut site la cabinet ani de zile. Acum, după o singură zi, am unul de 10 ori mai bun, mai frumos și mai intuitiv pentru pacienții mei. O recomand cu drag pe Andreea, dar toată echipa e de nota 10 !!",
+      "Eram invizibil pe Google Maps. Acum sunt pe locul 1 în orașul meu și pacienții vin direct din căutări. Echipa e de nota 10, rezultatele s-au văzut rapid !!",
     avatarUrl:
       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&auto=format&fit=crop",
   },
@@ -44,7 +46,7 @@ const TESTIMONIALS = [
     profession: "Manager Clinică Cluj",
     rating: 5,
     description:
-      "Prețul e corect, livrarea e rapidă și rezultatul e wow. Am recomandat deja 3 prieteni. Dacă vrei un site care aduce clienți, Oana e alegerea.",
+      "Prețul e corect, rezultatele au venit rapid și suntem acum în Top 3 pe Google Maps. Am recomandat deja 3 prieteni. Dacă vrei clienți din căutări locale, aici e alegerea.",
     avatarUrl:
       "https://plus.unsplash.com/premium_photo-1690407617542-2f210cf20d7e?w=200&auto=format&fit=crop",
   },
@@ -54,18 +56,29 @@ const TESTIMONIALS = [
     profession: "Owner Coffee Shop",
     rating: 5,
     description:
-      "Super tare!! Mi-a luat ideea din cap și a făcut-o realitate exact cum mi-am imaginat. John e un adevărat vrăjitor pe partea tehnică la construit site-uri, răspunde repede și e un om de nota 10. Recomand 🤗",
+      "Super tare!! Din prima lună am ajuns pe locul 2 în Google Maps. Acum clienții ne găsesc instant când caută cafenele în zonă. Recomand cu încredere 🤗",
     avatarUrl:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&auto=format&fit=crop",
   },
 ];
+
+const ScrollFadeHeader = ({ children }: { children: React.ReactNode }) => {
+  const { scrollYProgress } = useContainerScrollContext();
+  const opacity = useTransform(scrollYProgress, [0.65, 0.85], [1, 0]);
+
+  return (
+    <motion.div className="sticky top-0 pt-16 md:pt-24 lg:pt-32 pb-[120px]" style={{ opacity }}>
+      {children}
+    </motion.div>
+  );
+};
 
 const TestimonialsSection = () => {
   return (
     <section className="bg-background border-t border-border px-4 md:px-6">
       <div className="max-w-6xl mx-auto">
         <ContainerScroll className="h-[250vh]">
-          <div className="sticky top-0 pt-16 md:pt-24 lg:pt-32 pb-[120px] z-10">
+          <ScrollFadeHeader>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -81,8 +94,8 @@ const TestimonialsSection = () => {
                 </h2>
               </div>
             </motion.div>
-          </div>
-          <CardsContainer className="h-[50vh] w-full max-w-xl">
+          </ScrollFadeHeader>
+          <CardsContainer className="h-[50vh] w-full max-w-xl z-20">
             {TESTIMONIALS.map((testimonial, index) => (
               <CardTransformed
                 key={testimonial.id}
