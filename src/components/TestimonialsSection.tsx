@@ -8,6 +8,11 @@ import {
   useContainerScrollContext,
 } from "@/components/ui/animated-cards-stack";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import bogdanPhoto from "@/assets/bogdan_lamatic.webp";
+import stefanPhoto from "@/assets/stefan.webp";
+import mihaelaPhoto from "@/assets/mihaela.webp";
+import mateiPhoto from "@/assets/matei.webp";
+import ancaPhoto from "@/assets/anca-b.webp";
 
 const TESTIMONIALS = [
   {
@@ -17,8 +22,7 @@ const TESTIMONIALS = [
     rating: 5,
     description:
       "De când sunt în Top 3 pe Google Maps, primesc de 3 ori mai multe apeluri de la clienți noi. Colegii avocați mă întreabă cum am reușit. Cea mai bună investiție făcută.",
-    avatarUrl:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop",
+    avatarUrl: bogdanPhoto,
   },
   {
     id: "testimonial-2",
@@ -27,8 +31,7 @@ const TESTIMONIALS = [
     rating: 5,
     description:
       "Sincer, nu credeam că o să ajung pe prima pagină în Google Maps atât de repede. M-am înșelat. Pacienții ne găsesc imediat, programările au explodat. Mulțumesc echipei ❤️❤️❤️",
-    avatarUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&auto=format&fit=crop",
+    avatarUrl: mihaelaPhoto,
   },
   {
     id: "testimonial-3",
@@ -37,8 +40,7 @@ const TESTIMONIALS = [
     rating: 5,
     description:
       "Eram invizibil pe Google Maps. Acum sunt pe locul 1 în orașul meu și pacienții vin direct din căutări. Echipa e de nota 10, rezultatele s-au văzut rapid !!",
-    avatarUrl:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&auto=format&fit=crop",
+    avatarUrl: mateiPhoto,
   },
   {
     id: "testimonial-4",
@@ -47,8 +49,7 @@ const TESTIMONIALS = [
     rating: 5,
     description:
       "Prețul e corect, rezultatele au venit rapid și suntem acum în Top 3 pe Google Maps. Am recomandat deja 3 prieteni. Dacă vrei clienți din căutări locale, aici e alegerea.",
-    avatarUrl:
-      "https://plus.unsplash.com/premium_photo-1690407617542-2f210cf20d7e?w=200&auto=format&fit=crop",
+    avatarUrl: ancaPhoto,
   },
   {
     id: "testimonial-5",
@@ -57,8 +58,7 @@ const TESTIMONIALS = [
     rating: 5,
     description:
       "Super tare!! Din prima lună am ajuns pe locul 2 în Google Maps. Acum clienții ne găsesc instant când caută cafenele în zonă. Recomand cu încredere 🤗",
-    avatarUrl:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&auto=format&fit=crop",
+    avatarUrl: stefanPhoto,
   },
 ];
 
