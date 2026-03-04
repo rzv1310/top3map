@@ -3,13 +3,13 @@ import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import maps1 from '@/assets/maps-1.jpeg';
-import maps2 from '@/assets/maps-2.jpeg';
-import maps3 from '@/assets/maps-3.jpeg';
-import maps4 from '@/assets/maps-4.jpeg';
-import maps5 from '@/assets/maps-5.jpeg';
-import maps6 from '@/assets/maps-6.jpeg';
-import maps7 from '@/assets/maps-7.jpeg';
+import maps1 from '@/assets/maps-1.webp';
+import maps2 from '@/assets/maps-2.webp';
+import maps3 from '@/assets/maps-3.webp';
+import maps4 from '@/assets/maps-4.webp';
+import maps5 from '@/assets/maps-5.webp';
+import maps6 from '@/assets/maps-6.webp';
+import maps7 from '@/assets/maps-7.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
