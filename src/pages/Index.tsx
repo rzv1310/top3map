@@ -18,7 +18,7 @@ const FadeIn: React.FC<{children: React.ReactNode;delay?: number;className?: str
   viewport={{ once: true, margin: "-100px" }}
   transition={{ duration: 0.5, delay }}
   className={className}>
-  
+
     {children}
   </motion.div>;
 
@@ -193,7 +193,7 @@ const CtaButton: React.FC<{children: React.ReactNode;className?: string;}> = ({ 
   whileHover={{ scale: 1.02 }}
   whileTap={{ scale: 0.98 }}
   className={`bg-brand hover:bg-brand-hover text-foreground font-bold uppercase tracking-wider py-5 px-8 md:px-12 text-lg md:text-xl transition-colors flex items-center justify-center gap-3 w-full sm:w-auto ${className}`}>
-  
+
     {children}
     <ArrowRight className="w-6 h-6" />
   </motion.a>;
@@ -205,7 +205,7 @@ const HeroMapPack = () =>
   animate={{ opacity: 1, scale: 1, rotate: 0 }}
   transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
   className="relative hidden lg:block">
-  
+
     <div className="bg-card border border-border p-6 rounded-3xl shadow-2xl shadow-primary/20 transform -rotate-2">
       <div className="flex items-center gap-3 mb-6 pb-4 border-b border-border">
         <MapPin className="text-brand w-8 h-8" />
@@ -239,7 +239,7 @@ const HeroMapPack = () =>
     animate={{ y: [0, -10, 0] }}
     transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
     className="absolute -bottom-6 -left-10 bg-background text-foreground font-display uppercase px-6 py-4 text-2xl rotate-3 shadow-xl border border-brand">
-    
+
       Primii 3 iau 90% din trafic
     </motion.div>
   </motion.div>;
@@ -356,7 +356,7 @@ const Index = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}>
-            
+
             <h1 className="font-display text-[2.625rem] sm:text-[3.625rem] md:text-[5.75rem] leading-[1.3] uppercase mb-6 md:mb-8">
               dacă nu ești în <span className="text-brand">top 3</span> în google maps,<br />
               <StrokeRevealText text="nu exiști." />
@@ -397,7 +397,7 @@ const Index = () => {
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 2, delay: i * 0.15, ease: "easeInOut" }}
                   style={{ perspective: 200 }}>
-                  
+
                     <item.icon className="w-8 h-8" />
                   </motion.div>
                   <span className="font-display text-2xl md:text-4xl uppercase tracking-wide">{item.text}</span>
@@ -525,7 +525,7 @@ const Index = () => {
               <p className="text-sm text-muted-foreground font-medium h-10">(pentru control absolut în oraș)</p>
             </div>
             <div className="mb-8">
-              <span className="text-5xl font-display">3500€</span>
+              <span className="text-5xl font-display">2.700€</span>
               <div className="text-sm text-muted-foreground mt-1">implementare</div>
               <div className="text-sm text-foreground mt-3">+ 300€/lună mentenanță & protecție poziție</div>
               <div className="text-sm text-foreground opacity-70">(opțional · doar după atingere obiectiv: TOP 3)</div>
@@ -554,7 +554,7 @@ const Index = () => {
               <p className="text-sm font-bold opacity-80 h-10">(pentru majoritatea afacerilor)</p>
             </div>
             <div className="mb-8">
-              <span className="text-6xl font-display">1900€</span>
+              <span className="text-6xl font-display">970€</span>
               <div className="text-sm font-bold mt-1">implementare</div>
               <div className="text-sm mt-3">+ 300€/lună mentenanță & protecție poziție</div>
               <div className="text-sm opacity-90">(opțional · doar după atingere obiectiv: TOP 3)</div>
@@ -579,12 +579,16 @@ const Index = () => {
               <p className="text-sm text-muted-foreground font-medium h-10">(pentru un început strategic)</p>
             </div>
             <div className="mb-8">
-              <span className="text-5xl font-display">900€</span>
+              <span className="text-5xl font-display">270€</span>
             </div>
             <ul className="space-y-4 mb-12 flex-1">
               <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-muted-foreground shrink-0" /> audit website + profil google business</li>
-              <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-muted-foreground shrink-0" /> optimizare profil google business</li>
-              <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-muted-foreground shrink-0" /> roadmap personalizat (îți spunem exact ce trebuie să faci în continuare)</li>
+              <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-muted-foreground shrink-0" />
+                <span className="flex flex-col">
+                  <span className="bg-brand text-white self-start">plan de acțiune personalizat</span>
+                  <span>( îți spunem exact ce trebuie să faci în continuare ca să ajungi în top 3 )</span>
+                </span>
+              </li>
               <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-muted-foreground shrink-0" /> fără abonament lunar</li>
               <li className="flex items-start gap-3 text-destructive/50 mt-4 pt-4 border-t border-border"><XCircle className="w-5 h-5 shrink-0" /> fără garanție top 3</li>
             </ul>
