@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import logo from '@/assets/logo_seo-doctor.jpeg';
 
 const navLinks = [
-  { label: 'Prețuri', href: '#preturi' },
-  { label: 'Întrebări Frecvente', href: '#faq' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Prețuri', mobileLabel: 'Prețuri', href: '#preturi' },
+  { label: 'Întrebări Frecvente', mobileLabel: 'FAQs', href: '#faq' },
+  { label: 'Contact', mobileLabel: 'Contact', href: '#contact' },
 ];
 
 const Header: React.FC = () => {
@@ -49,7 +49,8 @@ const Header: React.FC = () => {
               onClick={() => handleNavClick(link.href)}
               className="text-xs md:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wider"
             >
-              {link.label}
+              <span className="md:hidden">{link.mobileLabel}</span>
+              <span className="hidden md:inline">{link.label}</span>
             </button>
           ))}
           <a
