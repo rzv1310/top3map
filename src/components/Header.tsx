@@ -21,7 +21,21 @@ const Header: React.FC = () => {
     setMenuOpen(false);
     const el = document.querySelector(href);
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+      const targetY = el.getBoundingClientRect().top + window.scrollY;
+      const startY = window.scrollY;
+      const diff = targetY - startY;
+      const duration = 1200;
+      let start: number | null = null;
+      const step = (timestamp: number) => {
+        if (!start) start = timestamp;
+        const progress = Math.min((timestamp - start) / duration, 1);
+        const ease = progress < 0.5
+          ? 4 * progress * progress * progress
+          : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+        window.scrollTo(0, startY + diff * ease);
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
     }
   };
 
@@ -42,7 +56,7 @@ const Header: React.FC = () => {
         </a>
 
         {/* Nav - visible on all devices */}
-        <nav className="flex items-center gap-5 md:gap-8">
+        <nav className="flex items-center gap-7 md:gap-8">
           {navLinks.map((link) => (
             <button
               key={link.href}
