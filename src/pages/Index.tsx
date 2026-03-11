@@ -565,7 +565,7 @@ const Index = () => {
               <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 shrink-0" /> strategie autoritate locală</li>
               <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 shrink-0" /> management recenzii</li>
               <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 shrink-0" /> exclusivitate pe nișă + oraș</li>
-              <li className="flex items-start gap-3 mt-4 pt-4 border-t border-foreground/20 font-bold text-lg"><Target className="w-6 h-6 shrink-0" /> <span className="font-normal">GARANȚIE</span> TOP 3 INCLUSĂ</li>
+              <li className="flex items-start gap-3 mt-4 pt-4 border-t border-foreground/20 font-bold text-lg border border-white p-3"><Target className="w-6 h-6 shrink-0" /> <span className="font-normal">GARANȚIE</span> TOP 3 INCLUSĂ</li>
             </ul>
             <a href="https://wa.me/40742702982" target="_blank" rel="noopener noreferrer" className="block w-full py-5 bg-background text-foreground hover:bg-background/90 font-bold uppercase tracking-wider transition-colors text-lg text-center">
               Vreau Top 3
