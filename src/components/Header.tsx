@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import logo from '@/assets/logo_seo-doctor.jpeg';
 
 const navLinks = [
-  { label: 'Prețuri', href: '#preturi' },
-  { label: 'Întrebări Frecvente', href: '#faq' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Prețuri', mobileLabel: 'Prețuri', href: '#preturi' },
+  { label: 'Întrebări Frecvente', mobileLabel: 'FAQs', href: '#faq' },
+  { label: 'Contact', mobileLabel: 'Contact', href: '#contact' },
 ];
 
 const Header: React.FC = () => {
