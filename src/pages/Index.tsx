@@ -519,7 +519,7 @@ const Index = () => {
         </FadeIn>
         <div className="grid lg:grid-cols-3 gap-[150px] md:gap-[50px] max-w-6xl mx-auto items-center">
           {/* Elite */}
-          <FadeIn delay={0.1} className="bg-card border border-border p-5 md:p-8 flex flex-col h-full">
+          <FadeIn delay={0.1} className="bg-card border border-destructive p-5 md:p-8 flex flex-col h-full">
             <div className="mb-8">
               <h3 className="font-display text-3xl uppercase text-brand mb-2 font-normal md:font-bold">Elite</h3>
               <p className="text-sm text-muted-foreground font-medium h-10">(pentru control absolut în oraș)</p>
@@ -527,8 +527,7 @@ const Index = () => {
             <div className="mb-8">
               <span className="text-5xl font-display">2.700€</span>
               <div className="text-sm text-muted-foreground mt-1">implementare</div>
-              <div className="text-sm text-foreground mt-3">+ 300€/lună mentenanță & protecție poziție</div>
-              <div className="text-sm text-foreground opacity-70">(opțional · doar după atingere obiectiv: TOP 3)</div>
+              <div className="text-sm text-muted-foreground mt-3">Opțional (doar după atingere obiectiv TOP 3): 300€/lună mentenanță & protecție poziție</div>
             </div>
             <ul className="space-y-4 mb-12 flex-1">
               <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> creare website de la zero</li>
@@ -537,7 +536,7 @@ const Index = () => {
               <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> optimizare tehnică avansată</li>
               <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> exclusivitate pe nișă + oraș</li>
               <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> consultant dedicat 120 h/lună</li>
-              <li className="flex items-start gap-3 mt-4 pt-4 border-t border-border font-bold"><Target className="w-5 h-5 text-brand shrink-0" /> <span className="font-normal">GARANȚIE</span> TOP 3 INCLUSĂ</li>
+              <li className="flex items-start gap-3 mt-4 pt-4 border-t border-border font-bold border border-white p-3"><Target className="w-5 h-5 text-brand shrink-0" /> <span className="font-normal">GARANȚIE</span> TOP 3 INCLUSĂ</li>
             </ul>
             <a href="https://wa.me/40742702982" target="_blank" rel="noopener noreferrer" className="block w-full py-4 border border-border hover:bg-foreground/5 font-bold uppercase tracking-wider transition-colors text-center">
               Aplică pentru Elite
@@ -554,10 +553,9 @@ const Index = () => {
               <p className="text-sm font-bold opacity-80 h-10">(pentru majoritatea afacerilor)</p>
             </div>
             <div className="mb-8">
-              <span className="text-6xl font-display">970€</span>
+              <span className="text-6xl font-display">700€</span>
               <div className="text-sm font-bold mt-1">implementare</div>
-              <div className="text-sm mt-3">+ 300€/lună mentenanță & protecție poziție</div>
-              <div className="text-sm opacity-90">(opțional · doar după atingere obiectiv: TOP 3)</div>
+              <div className="text-sm mt-3 opacity-90">Opțional (doar după atingere obiectiv TOP 3): 300€/lună mentenanță & protecție poziție</div>
             </div>
             <ul className="space-y-4 mb-12 flex-1 font-medium">
               <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 shrink-0" /> audit complet</li>
@@ -565,7 +563,7 @@ const Index = () => {
               <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 shrink-0" /> strategie autoritate locală</li>
               <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 shrink-0" /> management recenzii</li>
               <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 shrink-0" /> exclusivitate pe nișă + oraș</li>
-              <li className="flex items-start gap-3 mt-4 pt-4 border-t border-foreground/20 font-bold text-lg"><Target className="w-6 h-6 shrink-0" /> <span className="font-normal">GARANȚIE</span> TOP 3 INCLUSĂ</li>
+              <li className="flex items-start gap-3 mt-4 pt-4 border-t border-foreground/20 font-bold text-lg border border-white p-3"><Target className="w-6 h-6 shrink-0" /> <span className="font-normal">GARANȚIE</span> TOP 3 INCLUSĂ</li>
             </ul>
             <a href="https://wa.me/40742702982" target="_blank" rel="noopener noreferrer" className="block w-full py-5 bg-background text-foreground hover:bg-background/90 font-bold uppercase tracking-wider transition-colors text-lg text-center">
               Vreau Top 3
@@ -640,7 +638,7 @@ const Index = () => {
       <Section className="bg-background border-t border-border" id="contact">
         <FadeIn>
           <h2 className="font-display text-3xl sm:text-5xl md:text-7xl uppercase text-center mb-4">
-            VREAU <span className="text-brand">ANALIZA</span> GRATUITĂ
+            Vreau <span className="text-brand">TOP 3</span>
           </h2>
           <p className="text-center text-muted-foreground mb-12 text-lg">
             Completează formularul și te contactăm imediat.
