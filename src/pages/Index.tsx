@@ -640,7 +640,7 @@ const Index = () => {
       <Section className="bg-background border-t border-border" id="contact">
         <FadeIn>
           <h2 className="font-display text-3xl sm:text-5xl md:text-7xl uppercase text-center mb-4">
-            VREAU <span className="text-brand">ANALIZA</span> GRATUITĂ
+            Vreau <span className="text-brand">TOP 3</span>
           </h2>
           <p className="text-center text-muted-foreground mb-12 text-lg">
             Completează formularul și te contactăm imediat.
