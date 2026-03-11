@@ -527,8 +527,7 @@ const Index = () => {
             <div className="mb-8">
               <span className="text-5xl font-display">2.700€</span>
               <div className="text-sm text-muted-foreground mt-1">implementare</div>
-              <div className="text-sm text-foreground mt-3">+ 300€/lună mentenanță & protecție poziție</div>
-              <div className="text-sm text-foreground opacity-70">(opțional · doar după atingere obiectiv: TOP 3)</div>
+              <div className="text-sm text-muted-foreground mt-3">Opțional (doar după atingere obiectiv TOP 3): 300€/lună mentenanță & protecție poziție</div>
             </div>
             <ul className="space-y-4 mb-12 flex-1">
               <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> creare website de la zero</li>
