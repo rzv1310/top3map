@@ -554,7 +554,7 @@ const Index = () => {
               <p className="text-sm font-bold opacity-80 h-10">(pentru majoritatea afacerilor)</p>
             </div>
             <div className="mb-8">
-              <span className="text-6xl font-display">970€</span>
+              <span className="text-6xl font-display">700€</span>
               <div className="text-sm font-bold mt-1">implementare</div>
               <div className="text-sm mt-3">+ 300€/lună mentenanță & protecție poziție</div>
               <div className="text-sm opacity-90">(opțional · doar după atingere obiectiv: TOP 3)</div>
