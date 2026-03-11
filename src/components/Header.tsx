@@ -49,7 +49,8 @@ const Header: React.FC = () => {
               onClick={() => handleNavClick(link.href)}
               className="text-xs md:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wider"
             >
-              {link.label}
+              <span className="md:hidden">{link.mobileLabel}</span>
+              <span className="hidden md:inline">{link.label}</span>
             </button>
           ))}
           <a
