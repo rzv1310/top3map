@@ -536,7 +536,7 @@ const Index = () => {
               <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> optimizare tehnică avansată</li>
               <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> exclusivitate pe nișă + oraș</li>
               <li className="flex items-start gap-3 text-muted-foreground"><CheckCircle2 className="w-5 h-5 text-brand shrink-0" /> consultant dedicat 120 h/lună</li>
-              <li className="flex items-start gap-3 mt-4 pt-4 border-t border-border font-bold"><Target className="w-5 h-5 text-brand shrink-0" /> <span className="font-normal">GARANȚIE</span> TOP 3 INCLUSĂ</li>
+              <li className="flex items-start gap-3 mt-4 pt-4 border-t border-border font-bold border border-white p-3"><Target className="w-5 h-5 text-brand shrink-0" /> <span className="font-normal">GARANȚIE</span> TOP 3 INCLUSĂ</li>
             </ul>
             <a href="https://wa.me/40742702982" target="_blank" rel="noopener noreferrer" className="block w-full py-4 border border-border hover:bg-foreground/5 font-bold uppercase tracking-wider transition-colors text-center">
               Aplică pentru Elite
