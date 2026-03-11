@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
 import logo from '@/assets/logo_seo-doctor.jpeg';
 
 const navLinks = [
