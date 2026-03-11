@@ -56,7 +56,7 @@ const Header: React.FC = () => {
         </a>
 
         {/* Nav - visible on all devices */}
-        <nav className="flex items-center gap-5 md:gap-8">
+        <nav className="flex items-center gap-7 md:gap-8">
           {navLinks.map((link) => (
             <button
               key={link.href}
