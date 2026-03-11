@@ -555,8 +555,7 @@ const Index = () => {
             <div className="mb-8">
               <span className="text-6xl font-display">700€</span>
               <div className="text-sm font-bold mt-1">implementare</div>
-              <div className="text-sm mt-3">+ 300€/lună mentenanță & protecție poziție</div>
-              <div className="text-sm opacity-90">(opțional · doar după atingere obiectiv: TOP 3)</div>
+              <div className="text-sm mt-3 opacity-90">Opțional (doar după atingere obiectiv TOP 3): 300€/lună mentenanță & protecție poziție</div>
             </div>
             <ul className="space-y-4 mb-12 flex-1 font-medium">
               <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 shrink-0" /> audit complet</li>
