@@ -519,7 +519,7 @@ const Index = () => {
         </FadeIn>
         <div className="grid lg:grid-cols-3 gap-[150px] md:gap-[50px] max-w-6xl mx-auto items-center">
           {/* Elite */}
-          <FadeIn delay={0.1} className="bg-card border border-border p-5 md:p-8 flex flex-col h-full">
+          <FadeIn delay={0.1} className="bg-card border border-destructive p-5 md:p-8 flex flex-col h-full">
             <div className="mb-8">
               <h3 className="font-display text-3xl uppercase text-brand mb-2 font-normal md:font-bold">Elite</h3>
               <p className="text-sm text-muted-foreground font-medium h-10">(pentru control absolut în oraș)</p>
