@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import logo from '@/assets/logo_seo-doctor.jpeg';
+import logo from '@/assets/logo_seo-doctor.webp';
 
 const navLinks = [
   { label: 'Prețuri', mobileLabel: 'Prețuri', href: '#preturi' },

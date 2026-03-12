@@ -24,9 +24,23 @@
     <meta name="twitter:description" content="Ajungem în Top 3 Harta Google pentru afacerea ta. Optimizare Google Maps cu garanție. Nu plătești pentru promisiuni, plătești pentru rezultat.">
     <meta name="twitter:image" content="https://local.seo-doctor.ro/og-image.png">
 
+    <!-- Critical CSS: above-the-fold styles to prevent FOUC -->
+    <style>
+      :root{--background:0 0% 7%;--foreground:0 0% 100%;--brand:8 100% 50%}
+      *{margin:0;padding:0;box-sizing:border-box}
+      body{background:hsl(var(--background));color:hsl(var(--foreground));font-family:Inter,system-ui,sans-serif}
+      .font-display{font-family:Anton,Impact,sans-serif}
+      #root{min-height:100vh}
+    </style>
+
+    <!-- Preload fonts non-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+
+    <!-- Resource hints -->
+    <link rel="dns-prefetch" href="https://connect.facebook.net">
 
     <!-- Meta Pixel Code - only on production -->
     <script>

@@ -1,7 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import maps1 from '@/assets/maps-1.webp';
 import maps2 from '@/assets/maps-2.webp';
@@ -10,8 +8,6 @@ import maps4 from '@/assets/maps-4.webp';
 import maps5 from '@/assets/maps-5.webp';
 import maps6 from '@/assets/maps-6.webp';
 import maps7 from '@/assets/maps-7.webp';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const images = [maps1, maps2, maps3, maps4, maps5, maps6, maps7];
 
@@ -109,39 +105,49 @@ const DesktopCarousel: React.FC = () => {
     const section = sectionRef.current;
     if (!section) return;
 
-    const cards = cardRefs.current.filter(Boolean) as HTMLDivElement[];
-    const totalCards = cards.length;
-    const scrollPerCard = 700;
-    const totalScroll = totalCards * scrollPerCard;
+    let ctx: any;
 
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
-          start: 'top top',
-          end: `+=${totalScroll}`,
-          pin: true,
-          pinSpacing: true,
-          pinReparent: false,
-          scrub: 0.3,
-        },
-      });
+    const initGsap = async () => {
+      const { default: gsap } = await import('gsap');
+      const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+      gsap.registerPlugin(ScrollTrigger);
 
-      cards.forEach((card, i) => {
-        if (i === totalCards - 1) return;
-        tl.to(card, { duration: 0.3 }, i * 1);
-        tl.to(card, {
-          yPercent: -150,
-          rotation: (i % 2 === 0 ? -1 : 1) * 15,
-          opacity: 0,
-          scale: 0.7,
-          duration: 0.7,
-          ease: 'power3.inOut',
-        }, i * 1 + 0.3);
-      });
-    }, section);
+      const cards = cardRefs.current.filter(Boolean) as HTMLDivElement[];
+      const totalCards = cards.length;
+      const scrollPerCard = 700;
+      const totalScroll = totalCards * scrollPerCard;
 
-    return () => ctx.revert();
+      ctx = gsap.context(() => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            start: 'top top',
+            end: `+=${totalScroll}`,
+            pin: true,
+            pinSpacing: true,
+            pinReparent: false,
+            scrub: 0.3,
+          },
+        });
+
+        cards.forEach((card, i) => {
+          if (i === totalCards - 1) return;
+          tl.to(card, { duration: 0.3 }, i * 1);
+          tl.to(card, {
+            yPercent: -150,
+            rotation: (i % 2 === 0 ? -1 : 1) * 15,
+            opacity: 0,
+            scale: 0.7,
+            duration: 0.7,
+            ease: 'power3.inOut',
+          }, i * 1 + 0.3);
+        });
+      }, section);
+    };
+
+    initGsap();
+
+    return () => ctx?.revert();
   }, []);
 
   const getCardStyle = (i: number) => {
