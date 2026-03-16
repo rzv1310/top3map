@@ -41,6 +41,19 @@
 
     <!-- Resource hints -->
     <link rel="dns-prefetch" href="https://connect.facebook.net">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- Google Tag Manager - only on production -->
+    <script>
+    if (window.location.hostname === 'local.seo-doctor.ro') {
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5FFHH8D3');
+    }
+    </script>
+    <!-- End Google Tag Manager -->
 
     <!-- Meta Pixel Code - only on production -->
     <script>
@@ -60,6 +73,11 @@
     <!-- End Meta Pixel Code -->
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) - only on production -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5FFHH8D3"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <!-- Meta Pixel noscript fallback -->
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=765044876355878&ev=PageView&noscript=1"
