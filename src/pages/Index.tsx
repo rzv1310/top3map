@@ -388,7 +388,7 @@ const Index = () => {
                 e.preventDefault();
                 const el = document.getElementById('hero-title');
                 if (el) {
-                  const targetY = el.getBoundingClientRect().top + window.scrollY;
+                  const targetY = el.getBoundingClientRect().top + window.scrollY - 80;
                   const startY = window.scrollY;
                   const diff = targetY - startY;
                   const duration = 1200;
