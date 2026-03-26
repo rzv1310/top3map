@@ -185,18 +185,40 @@ const ContactForm: React.FC = () => {
 };
 
 
-const CtaButton: React.FC<{children: React.ReactNode;className?: string;}> = ({ children, className = "" }) =>
-<motion.a
-  href="https://wa.me/40742702982"
-  target="_blank"
-  rel="noopener noreferrer"
-  whileHover={{ scale: 1.02 }}
-  whileTap={{ scale: 0.98 }}
-  className={`bg-brand hover:bg-brand-hover text-foreground font-bold uppercase tracking-wider py-5 px-8 md:px-12 text-lg md:text-xl transition-colors flex items-center justify-center gap-3 w-full sm:w-auto ${className}`}>
+const CtaButton: React.FC<{children: React.ReactNode;className?: string;}> = ({ children, className = "" }) => {
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const el = document.querySelector('#preturi');
+    if (el) {
+      const targetY = el.getBoundingClientRect().top + window.scrollY;
+      const startY = window.scrollY;
+      const diff = targetY - startY;
+      const duration = 1200;
+      let start: number | null = null;
+      const step = (timestamp: number) => {
+        if (!start) start = timestamp;
+        const progress = Math.min((timestamp - start) / duration, 1);
+        const ease = progress < 0.5
+          ? 4 * progress * progress * progress
+          : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+        window.scrollTo(0, startY + diff * ease);
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }
+  };
 
-    {children}
-    <ArrowRight className="w-6 h-6" />
-  </motion.a>;
+  return (
+    <motion.button
+      onClick={handleClick}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      className={`bg-brand hover:bg-brand-hover text-foreground font-bold uppercase tracking-wider py-5 px-8 md:px-12 text-lg md:text-xl transition-colors flex items-center justify-center gap-3 w-full sm:w-auto cursor-pointer ${className}`}>
+      {children}
+      <ArrowRight className="w-6 h-6" />
+    </motion.button>
+  );
+};
 
 
 const HeroMapPack = () =>
