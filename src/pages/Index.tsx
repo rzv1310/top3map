@@ -10,6 +10,7 @@ import MapsScrollSection from '@/components/MapsScrollSection';
 import StrokeRevealText from '@/components/StrokeRevealText';
 import Header from '@/components/Header';
 import TestimonialsSection from '@/components/TestimonialsSection';
+import top3GoogleMaps from '@/assets/top_3_google_maps.webp';
 
 const FadeIn: React.FC<{children: React.ReactNode;delay?: number;className?: string;}> = ({ children, delay = 0, className = "" }) =>
 <motion.div
@@ -379,7 +380,36 @@ const Index = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}>
 
-            <h1 className="font-display text-[2.625rem] sm:text-[3.625rem] md:text-[5.75rem] leading-[1.3] uppercase mb-6 md:mb-8">
+            {/* Mobile-only image before H1 */}
+            <a
+              href="#hero-title"
+              className="block lg:hidden mb-6"
+              onClick={(e) => {
+                e.preventDefault();
+                const el = document.getElementById('hero-title');
+                if (el) {
+                  const targetY = el.getBoundingClientRect().top + window.scrollY;
+                  const startY = window.scrollY;
+                  const diff = targetY - startY;
+                  const duration = 1200;
+                  let start: number | null = null;
+                  const step = (timestamp: number) => {
+                    if (!start) start = timestamp;
+                    const progress = Math.min((timestamp - start) / duration, 1);
+                    const ease = progress < 0.5
+                      ? 4 * progress * progress * progress
+                      : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+                    window.scrollTo(0, startY + diff * ease);
+                    if (progress < 1) requestAnimationFrame(step);
+                  };
+                  requestAnimationFrame(step);
+                }
+              }}
+            >
+              <img src={top3GoogleMaps} alt="Top 3 Google Maps" className="w-full max-w-sm mx-auto rounded-2xl border border-border shadow-xl" />
+            </a>
+
+            <h1 id="hero-title" className="font-display text-[2.625rem] sm:text-[3.625rem] md:text-[5.75rem] leading-[1.3] uppercase mb-6 md:mb-8">
               dacă nu ești în <span className="text-brand">top 3</span> în google maps,<br />
               <StrokeRevealText text="nu exiști." />
             </h1>
